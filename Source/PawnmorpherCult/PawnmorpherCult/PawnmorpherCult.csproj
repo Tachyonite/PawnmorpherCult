@@ -137,9 +137,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abilities\AbilityCompBase.cs" />
+    <Compile Include="Abilities\AddMutation.cs" />
     <Compile Include="ModInit.cs" />
     <Compile Include="PMCult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
