@@ -1,0 +1,61 @@
+<Defs>
+
+	<AbilityDef ParentName="PsycastBase">
+    <defName>EtherPolymorph</defName>
+    <label>polymorph</label>
+    <description>Quickly transform a humanoid into an animal, with no middle phase.</description>
+    <level>2</level>
+    <iconPath>UI/Abilities/EtherPolymorph</iconPath>
+    <hotKey>Misc5</hotKey>
+    <statBases>
+      <Ability_EntropyGain>20</Ability_EntropyGain>
+      <Ability_Duration>30</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <warmupTime>1</warmupTime>
+      <range>20</range>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>PawnmorphGunshotTF</hediffDef>
+        <psychic>True</psychic>
+        <goodwillImpact>-15</goodwillImpact>
+        <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef ParentName="PsycastBase">
+    <defName>EtherRazorclaw</defName>
+    <label>razorclaw</label>
+    <description>Mutate powerful claws that rip and tear in melee combat.</description>
+    <level>4</level>
+    <iconPath>UI/Abilities/EtherRazorclaw</iconPath>
+    <hotKey>Misc11</hotKey>
+    <statBases>
+      <Ability_EntropyGain>15</Ability_EntropyGain>
+      <Ability_Duration>60</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <warmupTime>0.25</warmupTime>
+      <range>0</range>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>EtherRazorclaw</hediffDef>
+		<applyToSelf>True</applyToSelf>
+        <psychic>True</psychic>
+        <durationMultiplier>MutagenSensitivity</durationMultiplier>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>

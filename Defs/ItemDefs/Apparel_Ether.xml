@@ -1,0 +1,61 @@
+<Defs>
+
+<ThingDef ParentName="ApparelMakeableBase">
+    <defName>EtherCultistRobe</defName>
+    <label>etherbound robes</label>
+    <description>A set of purple and gold robes for followers of Ether. Emblazoned with the Heart and Sight of Ether and bound by a chain, these ceremonial robes represent their desire to break free from the chains of their limiting humanity, and join with the chaotic energy that is Ether herself.</description>
+    <graphicData>
+      <texPath>CultRobe/CultRobe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.90</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToMake>9000</WorkToMake>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Mass>4</Mass>
+      <Flammability>0.6</Flammability>
+      <ArmorRating_Sharp>1.00</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.36</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.27</ArmorRating_Heat>
+      <Insulation_Cold>1</Insulation_Cold>
+      <EquipDelay>5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.12</MoveSpeed>
+    </equippedStatOffsets>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <costList>
+      <Cloth>30</Cloth>
+      <Steel>60</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      <wornGraphicPath>CultRobe/CultRobe</wornGraphicPath>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <tags>
+        <li>EtherCultistMidTier</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <only>(1,1,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+</Defs>

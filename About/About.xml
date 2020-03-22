@@ -1,0 +1,29 @@
+<ModMetaData>
+	<name>Pawnmorpher: Cult Expansion</name>
+	<author>Mic</author>
+	<supportedVersions>
+		<li>1.1</li>
+	</supportedVersions>
+	<description>
+	May Ether's light guide you.
+	</description>
+	<packageId>tachyonite.pawnmorphercults</packageId>
+	<modDependencies>
+		<li>
+			<packageId>erdelf.HumanoidAlienRaces</packageId>
+			<displayName>Humanoid Alien Races 2.0</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=839005762</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>tachyonnite.pawnmorpher</packageId>
+			<displayName>Pawnmorpher</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1786466855</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadBefore>
+	</loadBefore>
+	<loadAfter>
+		<li>erdelf.HumanoidAlienRaces</li>
+		<li>tachyonnite.pawnmorpher</li>
+	</loadAfter>
+</ModMetaData>

@@ -1,0 +1,12 @@
+﻿<Manifest>
+	<identifier>Pawnmorpher: Cult Expansion</identifier>
+	<version>0.0.1</version>
+	<dependencies>
+		<li>HumanoidAlienRaces2.0</li>
+		<li>HugsLib</li>
+		<li>Pawnmorpher</li>
+	</dependencies>
+	<incompatibleWith>
+		<li>FacialStuff1.0</li>
+	</incompatibleWith>
+</Manifest>

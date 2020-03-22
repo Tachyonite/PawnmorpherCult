@@ -1,0 +1,36 @@
+<Defs>
+
+	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphPart">
+		<defName>EtherRazorclaw</defName>
+		<label>razorclaw</label>
+		<description>Sharp, horrifying claws that rip and tear with gory efficiency in melee combat. They even pierce through armour like butter.</description>
+		<parts>
+			<li>Hand</li>
+		</parts>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>razorclaws</label>
+						<labelUsedInLogging>False</labelUsedInLogging>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>20.0</power>
+						<cooldownTime>1.5</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<surpriseAttack>
+							<extraMeleeDamages>
+								<li>
+									<def>Stun</def>
+									<amount>14</amount>
+								</li>
+							</extraMeleeDamages>
+						</surpriseAttack>
+					</li>
+				</tools>
+			</li>
+		</comps>
+	</Pawnmorph.Hediffs.MutationDef>
+
+</Defs>
