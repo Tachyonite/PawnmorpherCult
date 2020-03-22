@@ -67,8 +67,8 @@
     <comps>
       <li Class = "PawnmorpherCult.Abilities.AddMutationProperties">
         <mutations>
-          <li>EtherBullhide</li>
-          <li>EtherHorns</li>
+          <li>EtherBullhideAbility</li>
+          <li>EtherHornsAbility</li>
         </mutations>
 		    <applyToSelf>True</applyToSelf>
       </li>
@@ -95,7 +95,7 @@
     <comps>
       <li Class = "PawnmorpherCult.Abilities.AddMutationProperties">
         <mutations>
-          <li>EtherFoilskin</li>
+          <li>EtherFoilskinAbility</li>
         </mutations>
 		    <applyToSelf>True</applyToSelf>
       </li>

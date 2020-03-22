@@ -33,9 +33,98 @@
 		</comps>
 	</Pawnmorph.Hediffs.MutationDef>
 
+	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphSkinPart" Name="Bullhide">
+		<defName>EtherBullhide</defName>
+		<label>bullhide</label>
+		<description>A hide tougher than leather has grown over this pawn's body, able to soak blunt and sharp hits.</description>
+		<categories>
+			<li>Minor</li>
+		</categories>
+		<classInfluence>CowMorph</classInfluence>
+		<parts>
+			<li>Torso</li>
+		</parts>
+		<mutationLogRulePack>HideGrowthLogPack</mutationLogRulePack>
+		<stages>
+			<li>
+				<statOffsets>
+				<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+				<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+			</statOffsets>
+			</li>
+		</stages>
+		
+	</Pawnmorph.Hediffs.MutationDef>
+	
+	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphSkinPart" Name="Foilskin">
+		<defName>EtherFoilskin</defName>
+		<label>foilskin</label>
+		<description>A glossy golden skin covers this pawn.</description>
+		<parts>
+			<li>Torso</li>
+		</parts>
+		<categories>
+			<li>Minor</li>
+		</categories>
+		<classInfluence>Ungulate</classInfluence>
+		<stages>
+			<li>
+				<statOffsets>
+					<SocialImpact>+0.20</SocialImpact>
+				</statOffsets>
+			</li>
+		</stages>
+	</Pawnmorph.Hediffs.MutationDef>
+
 	<Pawnmorph.Hediffs.MutationDef ParentName="Razorclaw">
 		<defName>EtherRazorclawAbility</defName>
 		<comps>
+			<li Class="PawnmorpherCult.Hediffs.RemoveMutationDurationProperties" >
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+		</comps>
+	</Pawnmorph.Hediffs.MutationDef>
+
+	<Pawnmorph.Hediffs.MutationDef ParentName="Foilskin">
+		<defName>EtherFoilskinAbility</defName>
+		<comps>
+			<li Class="PawnmorpherCult.Hediffs.RemoveMutationDurationProperties" >
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+		</comps>
+	</Pawnmorph.Hediffs.MutationDef>
+
+	<Pawnmorph.Hediffs.MutationDef ParentName="Bullhide">
+		<defName>EtherBullhideAbility</defName>
+		<comps>
+			<li Class="PawnmorpherCult.Hediffs.RemoveMutationDurationProperties" >
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+		</comps>
+	</Pawnmorph.Hediffs.MutationDef>
+
+	<Pawnmorph.Hediffs.MutationDef ParentName="CowPart">
+		<defName>EtherHornsAbility</defName>
+		<label>horns</label>
+		<description>Burly horns decorate [PAWN_nameDef]'s head.</description>
+		<parts>
+			<li>Skull</li>
+		</parts>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>gored</label>
+						<labelUsedInLogging>False</labelUsedInLogging>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>20.0</power>
+						<cooldownTime>3</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+					</li>
+				</tools>
+			</li>
 			<li Class="PawnmorpherCult.Hediffs.RemoveMutationDurationProperties" >
 				<showRemainingTime>true</showRemainingTime>
 			</li>
