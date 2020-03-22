@@ -1,0 +1,11 @@
+<Defs>
+    <QuestScriptDef Abstract="True" Name="EtherDecreeBase">
+        <decreeSelectionWeight>1</decreeSelectionWeight>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <autoAccept>true</autoAccept>
+        <decreeTags>
+            <li>EtherAll</li>
+        </decreeTags>
+    </QuestScriptDef>
+
+</Defs>

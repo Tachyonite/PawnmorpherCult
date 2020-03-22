@@ -50,7 +50,7 @@
             <li>Cleaning</li>
         </disabledWorkTags>
         <permits>
-            <li>CallMilitaryAidSmall</li>
+            <li>CallEtherMilitaryAidSmall</li>
         </permits>
         <requiredApparel>
             <li>
@@ -156,7 +156,7 @@
         <permits>
             <li>TradeSettlement</li>
             <li>TradeCaravan</li>
-            <li>CallMilitaryAidSmall</li>
+            <li>CallEtherMilitaryAidSmall</li>
         </permits>
         <requiredApparel>
             <li>
@@ -287,8 +287,8 @@
         <permits>
             <li>TradeSettlement</li>
             <li>TradeCaravan</li>
-            <li>CallMilitaryAidSmall</li>
-            <li>CallMilitaryAidLarge</li>
+            <li>CallEtherMilitaryAidSmall</li>
+            <li>CallEtherMilitaryAidLarge</li>
         </permits>
         <requiredApparel>
             <li>
@@ -422,9 +422,9 @@
             <li>TradeSettlement</li>
             <li>TradeCaravan</li>
             <li>TradeOrbital</li>
-            <li>CallMilitaryAidSmall</li>
-            <li>CallMilitaryAidLarge</li>
-            <li>CallMilitaryAidGrand</li>
+            <li>CallEtherMilitaryAidSmall</li>
+            <li>CallEtherMilitaryAidLarge</li>
+            <li>CallEtherMilitaryAidGrand</li>
         </permits>
         <requiredApparel>
             <li>
@@ -575,9 +575,9 @@
             <li>TradeSettlement</li>
             <li>TradeCaravan</li>
             <li>TradeOrbital</li>
-            <li>CallMilitaryAidSmall</li>
-            <li>CallMilitaryAidLarge</li>
-            <li>CallMilitaryAidGrand</li>
+            <li>CallEtherMilitaryAidSmall</li>
+            <li>CallEtherMilitaryAidLarge</li>
+            <li>CallEtherMilitaryAidGrand</li>
         </permits>
         <requiredApparel>
             <li>
@@ -724,8 +724,8 @@
             <li>TradeSettlement</li>
             <li>TradeCaravan</li>
             <li>TradeOrbital</li>
-            <li>CallMilitaryAidLarge</li>
-            <li>CallMilitaryAidGrand</li>
+            <li>CallEtherMilitaryAidLarge</li>
+            <li>CallEtherMilitaryAidGrand</li>
         </permits>
         <requiredApparel>
             <li>

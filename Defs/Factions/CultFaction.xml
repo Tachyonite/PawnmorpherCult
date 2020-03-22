@@ -25,6 +25,7 @@
         <backstoryFilters>
           <li>
             <categories>
+                <!-- TODO remove ImperialCommon once there are Ether backstories-->
               <li>ImperialCommon</li>
               <li>EtherialCommon</li>
             </categories>
