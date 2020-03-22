@@ -48,12 +48,12 @@
       </targetParams>
     </verbProperties>
     <comps>
-      <li Class = "CompProperties_AbilityGiveHediff">
-        <compClass>CompAbilityEffect_GiveHediff</compClass>
-        <hediffDef>EtherRazorclaw</hediffDef>
-		<applyToSelf>True</applyToSelf>
+      <li Class = "PawnmorpherCult.Abilities.AddMutationProperties">
+        <mutations>
+          <li>EtherRazorclaw</li>
+        </mutations>
+		    <applyToSelf>True</applyToSelf>
         <psychic>True</psychic>
-        <durationMultiplier>MutagenSensitivity</durationMultiplier>
       </li>
     </comps>
   </AbilityDef>
