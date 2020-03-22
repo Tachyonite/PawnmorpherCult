@@ -15,7 +15,7 @@
 			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=839005762</steamWorkshopUrl>
 		</li>
 		<li>
-			<packageId>tachyonnite.pawnmorpher</packageId>
+			<packageId>tachyonite.pawnmorpher</packageId>
 			<displayName>Pawnmorpher</displayName>
 			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1786466855</steamWorkshopUrl>
 		</li>
@@ -24,6 +24,6 @@
 	</loadBefore>
 	<loadAfter>
 		<li>erdelf.HumanoidAlienRaces</li>
-		<li>tachyonnite.pawnmorpher</li>
+		<li>tachyonite.pawnmorpher</li>
 	</loadAfter>
 </ModMetaData>
