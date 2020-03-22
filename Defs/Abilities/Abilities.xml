@@ -122,7 +122,7 @@
     <comps>
       <li Class = "PawnmorpherCult.Abilities.AddMutationProperties">
         <mutations>
-          <li>EtherRazorclaw</li>
+          <li>EtherRazorclawAbility</li>
         </mutations>
 		    <applyToSelf>True</applyToSelf>
       </li>

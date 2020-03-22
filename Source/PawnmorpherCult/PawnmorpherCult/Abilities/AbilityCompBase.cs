@@ -12,7 +12,7 @@ namespace PawnmorpherCult.Abilities
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="RimWorld.AbilityComp" />
-    public abstract class AbilityCompBase<T> : CompAbilityEffect where T: AbilityCompProperties
+    public abstract class AbilityCompBase<T> : CompAbilityEffect_WithDuration where T: AbilityCompProperties
     {
 
         public T Properties
@@ -37,7 +37,7 @@ namespace PawnmorpherCult.Abilities
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="Verse.AbilityCompProperties" />
-    public abstract class AbilityCompPropertiesBase<T> : CompProperties_AbilityEffect where T : AbilityComp
+    public abstract class AbilityCompPropertiesBase<T> : CompProperties_AbilityEffectWithDuration where T : AbilityComp
     {
         public AbilityCompPropertiesBase()
         {
