@@ -1,0 +1,874 @@
+<Defs>
+    <RoyalTitleDef Abstract="True" Name="BaseEtherTitle">
+        <tags>
+            <li>EtherTitle</li>
+        </tags>
+        <!-- custom gained/lost thought? -->
+        <awardThought>GainedTitle</awardThought>
+        <lostThought>LostTitle</lostThought>
+        <recruitmentDifficultyOffset>0.2</recruitmentDifficultyOffset>
+    </RoyalTitleDef>
+
+    <RoyalTitleDef ParentName="BaseEtherTitle">
+        <defName>Initiate</defName>
+        <label>initiate</label>
+        <description>TODO</description>
+        <seniority>0</seniority>
+        <favorCost>1</favorCost>
+        <changeHeirQuestPoints>1000</changeHeirQuestPoints>
+    </RoyalTitleDef>
+
+
+    <RoyalTitleDef Abstract="True" Name="BaseEtherTitlePsycaster" ParentName="BaseEtherTitle">
+        <rewards>
+            <EvonicManipulator>1</EvonicManipulator>
+        </rewards>
+    </RoyalTitleDef>
+
+    <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
+        <defName>Adherent</defName>
+        <label>adherent</label>
+        <description>TODO</description>
+        <seniority>100</seniority>
+        <favorCost>6</favorCost>
+        <changeHeirQuestPoints>1000</changeHeirQuestPoints>
+        <commonality>1</commonality>
+    </RoyalTitleDef>
+
+
+    <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
+        <defName>Follower</defName>
+        <label>follower</label>
+        <description>TODO</description>
+        <seniority>200</seniority>
+        <favorCost>6</favorCost>
+        <minExpectation>Moderate</minExpectation>
+        <changeHeirQuestPoints>1200</changeHeirQuestPoints>
+        <recruitmentResistanceOffset>10</recruitmentResistanceOffset>
+        <commonality>1</commonality>
+        <disabledWorkTags>
+            <li>Cleaning</li>
+        </disabledWorkTags>
+        <permits>
+            <li>CallMilitaryAidSmall</li>
+        </permits>
+        <requiredApparel>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier2</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier2</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+        </requiredApparel>
+        <throneRoomRequirements>
+            <li Class="RoomRequirement_ThingAnyOf">
+                <things>
+                    <li>Throne</li>
+                    <li>GrandThrone</li>
+                </things>
+            </li>
+            <li Class="RoomRequirement_Area">
+                <area>24</area>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFloored</labelKey>
+                <tags>
+                    <li>Floor</li>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Brazier</thingDef>
+                <count>2</count>
+            </li>
+            <li Class="RoomRequirement_AllThingsAreGlowing">
+                <labelKey>RoomRequirementAllBraziersMustBeLit</labelKey>
+                <thingDef>Brazier</thingDef>
+            </li>
+        </throneRoomRequirements>
+        <bedroomRequirements>
+            <li Class="RoomRequirement_Area">
+                <area>16</area>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFloored</labelKey>
+                <tags>
+                    <li>Floor</li>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingAnyOf">
+                <things>
+                    <li>DoubleBed</li>
+                    <li>RoyalBed</li>
+                </things>
+            </li>
+        </bedroomRequirements>
+        <foodRequirement>
+            <minQuality>MealSimple</minQuality>
+            <allowedTypes>Processed, Liquor</allowedTypes>
+            <allowedDefs>
+                <li>Ambrosia</li>
+                <li>Milk</li>
+                <li>RawBerries</li>
+            </allowedDefs>
+        </foodRequirement>
+    </RoyalTitleDef>
+
+    <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
+        <defName>Acolyte</defName>
+        <label>acolyte</label>
+        <description>TODO</description>
+        <seniority>300</seniority>
+        <favorCost>8</favorCost>
+        <minExpectation>High</minExpectation>
+        <needFallPerDayAuthority>0.2</needFallPerDayAuthority>
+        <changeHeirQuestPoints>1600</changeHeirQuestPoints>
+        <recruitmentResistanceOffset>25</recruitmentResistanceOffset>
+        <commonality>1</commonality>
+        <decreeMtbDays>40</decreeMtbDays>
+        <decreeMentalBreakCommonality>2</decreeMentalBreakCommonality>
+        <decreeTags>
+            <li>EtherAll</li>
+        </decreeTags>
+        <disabledWorkTags>
+            <li>ManualDumb</li>
+        </disabledWorkTags>
+        <permits>
+            <li>TradeSettlement</li>
+            <li>TradeCaravan</li>
+            <li>CallMilitaryAidSmall</li>
+        </permits>
+        <requiredApparel>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier2</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier2</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+        </requiredApparel>
+        <throneRoomRequirements>
+            <li Class="RoomRequirement_ThingAnyOf">
+                <things>
+                    <li>Throne</li>
+                    <li>GrandThrone</li>
+                </things>
+            </li>
+            <li Class="RoomRequirement_Area">
+                <area>30</area>
+            </li>
+            <li Class="RoomRequirement_Impressiveness">
+                <impressiveness>60</impressiveness>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFloored</labelKey>
+                <tags>
+                    <li>Floor</li>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Brazier</thingDef>
+                <count>2</count>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Column</thingDef>
+                <count>2</count>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>Harp</thingDef>
+            </li>
+            <li Class="RoomRequirement_AllThingsAreGlowing">
+                <labelKey>RoomRequirementAllBraziersMustBeLit</labelKey>
+                <thingDef>Brazier</thingDef>
+            </li>
+        </throneRoomRequirements>
+        <bedroomRequirements>
+            <li Class="RoomRequirement_Area">
+                <area>24</area>
+            </li>
+            <li Class="RoomRequirement_Impressiveness">
+                <impressiveness>40</impressiveness>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFloored</labelKey>
+                <tags>
+                    <li>Floor</li>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingAnyOf">
+                <things>
+                    <li>DoubleBed</li>
+                    <li>RoyalBed</li>
+                </things>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>EndTable</thingDef>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>Dresser</thingDef>
+            </li>
+        </bedroomRequirements>
+        <foodRequirement>
+            <minQuality>MealFine</minQuality>
+            <allowedTypes>Processed, Liquor</allowedTypes>
+            <allowedDefs>
+                <li>Ambrosia</li>
+                <li>Milk</li>
+                <li>RawBerries</li>
+            </allowedDefs>
+        </foodRequirement>
+    </RoyalTitleDef>
+
+    <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
+        <defName>Disciple</defName>
+        <label>disciple</label>
+        <description>TODO</description>
+        <seniority>400</seniority>
+        <favorCost>10</favorCost>
+        <minExpectation>SkyHigh</minExpectation>
+        <requiredMinimumApparelQuality>Normal</requiredMinimumApparelQuality>
+        <changeHeirQuestPoints>2200</changeHeirQuestPoints>
+        <recruitmentResistanceOffset>40</recruitmentResistanceOffset>
+        <commonality>1</commonality>
+        <needFallPerDayAuthority>0.4</needFallPerDayAuthority>
+        <decreeMtbDays>32</decreeMtbDays>
+        <decreeMentalBreakCommonality>4</decreeMentalBreakCommonality>
+        <decreeTags>
+            <li>EtherAll</li>
+        </decreeTags>
+        <disabledJoyKinds>
+            <li>Gaming_Dexterity</li>
+        </disabledJoyKinds>
+        <disabledWorkTags>
+            <li>ManualDumb</li>
+            <li>PlantWork</li>
+            <li>Mining</li>
+        </disabledWorkTags>
+        <permits>
+            <li>TradeSettlement</li>
+            <li>TradeCaravan</li>
+            <li>CallMilitaryAidSmall</li>
+            <li>CallMilitaryAidLarge</li>
+        </permits>
+        <requiredApparel>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier2</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier2</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+        </requiredApparel>
+        <throneRoomRequirements>
+            <li Class="RoomRequirement_ThingAnyOf">
+                <things>
+                    <li>Throne</li>
+                    <li>GrandThrone</li>
+                </things>
+            </li>
+            <li Class="RoomRequirement_Area">
+                <area>40</area>
+            </li>
+            <li Class="RoomRequirement_Impressiveness">
+                <impressiveness>90</impressiveness>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFloored</labelKey>
+                <tags>
+                    <li>Floor</li>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Brazier</thingDef>
+                <count>2</count>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Column</thingDef>
+                <count>4</count>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>Harp</thingDef>
+            </li>
+            <li Class="RoomRequirement_AllThingsAreGlowing">
+                <labelKey>RoomRequirementAllBraziersMustBeLit</labelKey>
+                <thingDef>Brazier</thingDef>
+            </li>
+        </throneRoomRequirements>
+        <bedroomRequirements>
+            <li Class="RoomRequirement_Area">
+                <area>24</area>
+            </li>
+            <li Class="RoomRequirement_Impressiveness">
+                <impressiveness>50</impressiveness>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFloored</labelKey>
+                <tags>
+                    <li>Floor</li>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingAnyOf">
+                <things>
+                    <li>DoubleBed</li>
+                    <li>RoyalBed</li>
+                </things>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>EndTable</thingDef>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>Dresser</thingDef>
+            </li>
+        </bedroomRequirements>
+        <foodRequirement>
+            <minQuality>MealFine</minQuality>
+            <allowedTypes>Processed, Liquor</allowedTypes>
+            <allowedDefs>
+                <li>Ambrosia</li>
+                <li>Milk</li>
+                <li>RawBerries</li>
+            </allowedDefs>
+        </foodRequirement>
+    </RoyalTitleDef>
+
+    <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
+        <defName>Preacher</defName>
+        <label>preacher</label>
+        <description>TODO</description>
+        <seniority>500</seniority>
+        <favorCost>14</favorCost>
+        <minExpectation>Noble</minExpectation>
+        <requiredMinimumApparelQuality>Normal</requiredMinimumApparelQuality>
+        <changeHeirQuestPoints>2800</changeHeirQuestPoints>
+        <recruitmentResistanceOffset>60</recruitmentResistanceOffset>
+        <commonality>1</commonality>
+        <suppressIdleAlert>true</suppressIdleAlert>
+        <decreeMtbDays>24</decreeMtbDays>
+        <decreeMentalBreakCommonality>8</decreeMentalBreakCommonality>
+        <decreeTags>
+            <li>EtherAll</li>
+        </decreeTags>
+        <needFallPerDayAuthority>0.6</needFallPerDayAuthority>
+        <disabledJoyKinds>
+            <li>Gaming_Dexterity</li>
+        </disabledJoyKinds>
+        <disabledWorkTags>
+            <li>ManualDumb</li>
+            <li>ManualSkilled</li>
+            <li>PlantWork</li>
+            <li>Mining</li>
+        </disabledWorkTags>
+        <permits>
+            <li>TradeSettlement</li>
+            <li>TradeCaravan</li>
+            <li>TradeOrbital</li>
+            <li>CallMilitaryAidSmall</li>
+            <li>CallMilitaryAidLarge</li>
+            <li>CallMilitaryAidGrand</li>
+        </permits>
+        <requiredApparel>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier2</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier5</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier5</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+        </requiredApparel>
+        <throneRoomRequirements>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>GrandThrone</thingDef>
+            </li>
+            <li Class="RoomRequirement_Area">
+                <area>60</area>
+            </li>
+            <li Class="RoomRequirement_Impressiveness">
+                <impressiveness>120</impressiveness>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFineFloored</labelKey>
+                <tags>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Brazier</thingDef>
+                <count>2</count>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Column</thingDef>
+                <count>4</count>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Drape</thingDef>
+                <count>2</count>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>Harpsichord</thingDef>
+            </li>
+            <li Class="RoomRequirement_AllThingsAreGlowing">
+                <labelKey>RoomRequirementAllBraziersMustBeLit</labelKey>
+                <thingDef>Brazier</thingDef>
+            </li>
+        </throneRoomRequirements>
+        <bedroomRequirements>
+            <li Class="RoomRequirement_Area">
+                <area>30</area>
+            </li>
+            <li Class="RoomRequirement_Impressiveness">
+                <impressiveness>70</impressiveness>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFloored</labelKey>
+                <tags>
+                    <li>Floor</li>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingAnyOf">
+                <things>
+                    <li>RoyalBed</li>
+                </things>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>EndTable</thingDef>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>Dresser</thingDef>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Drape</thingDef>
+                <count>1</count>
+            </li>
+        </bedroomRequirements>
+        <foodRequirement>
+            <minQuality>MealLavish</minQuality>
+            <allowedTypes>Processed, Liquor</allowedTypes>
+            <allowedDefs>
+                <li>Ambrosia</li>
+                <li>Milk</li>
+                <li>RawBerries</li>
+                <li>InsectJelly</li>
+            </allowedDefs>
+        </foodRequirement>
+    </RoyalTitleDef>
+
+    <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
+        <defName>Elder</defName>
+        <label>elder</label>
+        <description>TODO</description>
+        <seniority>600</seniority>
+        <favorCost>20</favorCost>
+        <minExpectation>Royal</minExpectation>
+        <requiredMinimumApparelQuality>Normal</requiredMinimumApparelQuality>
+        <changeHeirQuestPoints>3500</changeHeirQuestPoints>
+        <recruitmentResistanceOffset>75</recruitmentResistanceOffset>
+        <commonality>1</commonality>
+        <suppressIdleAlert>true</suppressIdleAlert>
+        <decreeMtbDays>16</decreeMtbDays>
+        <decreeMentalBreakCommonality>12</decreeMentalBreakCommonality>
+        <decreeTags>
+            <li>EtherAll</li>
+        </decreeTags>
+        <needFallPerDayAuthority>0.8</needFallPerDayAuthority>
+        <disabledJoyKinds>
+            <li>Gaming_Dexterity</li>
+        </disabledJoyKinds>
+        <disabledWorkTags>
+            <li>ManualDumb</li>
+            <li>ManualSkilled</li>
+            <li>PlantWork</li>
+            <li>Mining</li>
+            <li>Animals</li>
+        </disabledWorkTags>
+        <permits>
+            <li>TradeSettlement</li>
+            <li>TradeCaravan</li>
+            <li>TradeOrbital</li>
+            <li>CallMilitaryAidSmall</li>
+            <li>CallMilitaryAidLarge</li>
+            <li>CallMilitaryAidGrand</li>
+        </permits>
+        <requiredApparel>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier2</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier5</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier6</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier5</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+        </requiredApparel>
+        <throneRoomRequirements>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>GrandThrone</thingDef>
+            </li>
+            <li Class="RoomRequirement_Area">
+                <area>80</area>
+            </li>
+            <li Class="RoomRequirement_Impressiveness">
+                <impressiveness>160</impressiveness>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFineFloored</labelKey>
+                <tags>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Brazier</thingDef>
+                <count>2</count>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Column</thingDef>
+                <count>6</count>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Drape</thingDef>
+                <count>2</count>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>Piano</thingDef>
+            </li>
+            <li Class="RoomRequirement_AllThingsAreGlowing">
+                <labelKey>RoomRequirementAllBraziersMustBeLit</labelKey>
+                <thingDef>Brazier</thingDef>
+            </li>
+        </throneRoomRequirements>
+        <bedroomRequirements>
+            <li Class="RoomRequirement_Area">
+                <area>30</area>
+            </li>
+            <li Class="RoomRequirement_Impressiveness">
+                <impressiveness>80</impressiveness>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFineFloored</labelKey>
+                <tags>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingAnyOf">
+                <things>
+                    <li>RoyalBed</li>
+                </things>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>EndTable</thingDef>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>Dresser</thingDef>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Drape</thingDef>
+                <count>1</count>
+            </li>
+        </bedroomRequirements>
+        <foodRequirement>
+            <minQuality>MealLavish</minQuality>
+            <allowedTypes>Processed, Liquor</allowedTypes>
+            <allowedDefs>
+                <li>Ambrosia</li>
+                <li>Milk</li>
+                <li>RawBerries</li>
+                <li>InsectJelly</li>
+            </allowedDefs>
+        </foodRequirement>
+    </RoyalTitleDef>
+
+    <!-- ============== Ether titles - NPC only psycaster ============================= -->
+
+
+    <RoyalTitleDef Abstract="True" Name="BaseEtherTitleNPC" ParentName="BaseEtherTitle">
+        <minExpectation>Royal</minExpectation>
+        <requiredMinimumApparelQuality>Normal</requiredMinimumApparelQuality>
+        <suppressIdleAlert>true</suppressIdleAlert>
+        <disabledJoyKinds>
+            <li>Gaming_Dexterity</li>
+        </disabledJoyKinds>
+        <disabledWorkTags>
+            <li>Commoner</li>
+        </disabledWorkTags>
+        <permits>
+            <li>TradeSettlement</li>
+            <li>TradeCaravan</li>
+            <li>TradeOrbital</li>
+            <li>CallMilitaryAidLarge</li>
+            <li>CallMilitaryAidGrand</li>
+        </permits>
+        <requiredApparel>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier2</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier5</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier6</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>UpperHead</li>
+                    <li>FullHead</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>EtherTier7</li>
+                </requiredTags>
+                <allowedTags>
+                    <li>EtherCombatGear</li>
+                    <li>Psychic</li>
+                </allowedTags>
+            </li>
+        </requiredApparel>
+        <throneRoomRequirements>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>GrandThrone</thingDef>
+            </li>
+            <li Class="RoomRequirement_Area">
+                <area>80</area>
+            </li>
+            <li Class="RoomRequirement_Impressiveness">
+                <impressiveness>160</impressiveness>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFineFloored</labelKey>
+                <tags>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Brazier</thingDef>
+                <count>2</count>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Column</thingDef>
+                <count>6</count>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>Piano</thingDef>
+            </li>
+            <li Class="RoomRequirement_AllThingsAreGlowing">
+                <labelKey>RoomRequirementAllBraziersMustBeLit</labelKey>
+                <thingDef>Brazier</thingDef>
+            </li>
+        </throneRoomRequirements>
+        <bedroomRequirements>
+            <li Class="RoomRequirement_Area">
+                <area>30</area>
+            </li>
+            <li Class="RoomRequirement_Impressiveness">
+                <impressiveness>80</impressiveness>
+            </li>
+            <li Class="RoomRequirement_TerrainWithTags">
+                <labelKey>RoomRequirementAllFineFloored</labelKey>
+                <tags>
+                    <li>FineFloor</li>
+                </tags>
+            </li>
+            <li Class="RoomRequirement_ThingAnyOf">
+                <things>
+                    <li>RoyalBed</li>
+                </things>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>EndTable</thingDef>
+            </li>
+            <li Class="RoomRequirement_Thing">
+                <thingDef>Dresser</thingDef>
+            </li>
+            <li Class="RoomRequirement_ThingCount">
+                <thingDef>Drape</thingDef>
+                <count>1</count>
+            </li>
+        </bedroomRequirements>
+        <foodRequirement>
+            <minQuality>MealLavish</minQuality>
+            <allowedTypes>Processed, Liquor</allowedTypes>
+            <allowedDefs>
+                <li>Ambrosia</li>
+                <li>Milk</li>
+                <li>RawBerries</li>
+                <li>InsectJelly</li>
+            </allowedDefs>
+        </foodRequirement>
+    </RoyalTitleDef>
+
+    <RoyalTitleDef ParentName="BaseEtherTitleNPC">
+        <defName>Prophet</defName>
+        <label>prophet</label>
+        <description>TODO</description>
+        <seniority>700</seniority>
+        <commonality>1</commonality>
+        <recruitmentResistanceOffset>125</recruitmentResistanceOffset>
+    </RoyalTitleDef>
+
+    <RoyalTitleDef ParentName="BaseEtherTitleNPC">
+        <defName>Archprophet</defName>
+        <label>archprophet</label>
+        <description>TODO</description>
+        <seniority>900</seniority>
+        <commonality>0.1</commonality>
+        <recruitmentResistanceOffset>200</recruitmentResistanceOffset>
+        <replaceOnRecruited>Consul</replaceOnRecruited>
+    </RoyalTitleDef>
+
+
+</Defs>
