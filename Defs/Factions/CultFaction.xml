@@ -1,8 +1,8 @@
 <Defs>
     <FactionDef>
         <defName>EtherCult</defName>
-        <label>etherial cult</label>
-        <categoryTag>EtherialCult</categoryTag>
+        <label>Ethereal cult</label>
+        <categoryTag>EtherealCult</categoryTag>
         <description>TODO</description>
         <pawnSingular>cultist</pawnSingular>
         <pawnsPlural>cultists</pawnsPlural>
@@ -13,7 +13,7 @@
         <canSiege>true</canSiege>
         <canStageAttacks>true</canStageAttacks>
         <leaderTitle>Archprophet</leaderTitle>
-        <royalFavorLabel>etherial favor</royalFavorLabel>
+        <royalFavorLabel>Ethereal favor</royalFavorLabel>
         <leaderForceGenerateNewPawn>true</leaderForceGenerateNewPawn>
         <factionNameMaker>NamerFactionEtherCult</factionNameMaker>
         <settlementNameMaker>NamerSettlementEtherCult</settlementNameMaker>
@@ -27,7 +27,7 @@
             <categories>
                 <!-- TODO remove ImperialCommon once there are Ether backstories-->
               <li>ImperialCommon</li>
-              <li>EtherialCommon</li>
+              <li>EtherealCommon</li>
             </categories>
           </li>
         </backstoryFilters>

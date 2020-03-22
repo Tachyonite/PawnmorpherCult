@@ -168,7 +168,7 @@
 
             <!-- Apparel -->
             <li Class="StockGenerator_Clothes">
-                <apparelTag>Etherial</apparelTag>
+                <apparelTag>Ethereal</apparelTag>
                 <countRange>10~16</countRange>
             </li>
             <li Class="StockGenerator_Tag">

@@ -3,7 +3,7 @@
 <ThingDef Name="EtherApparelBase" Abstract="true" ParentName="ApparelMakeableBase">
   <apparel>
     <tags>
-      <li>Etherial</li>
+      <li>Ethereal</li>
     </tags>
   </apparel>
 </ThingDef>

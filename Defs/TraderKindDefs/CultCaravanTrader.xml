@@ -3,7 +3,7 @@
 
     <TraderKindDef>
         <defName>EtherCult_Caravan_TraderGeneral</defName>
-        <label>etherial trader</label>
+        <label>Ethereal trader</label>
         <commonality>1</commonality>
         <faction>EtherCult</faction>
         <permitRequiredForTrading>EtherTradeCaravan</permitRequiredForTrading>
@@ -102,7 +102,7 @@
 
             <!-- Apparel -->
             <li Class="StockGenerator_Clothes">
-                <apparelTag>Etherial</apparelTag>
+                <apparelTag>Ethereal</apparelTag>
                 <countRange>4~10</countRange>
             </li>
             <li Class="StockGenerator_Tag">
@@ -139,7 +139,7 @@
 
     <TraderKindDef>
         <defName>EtherCult_Caravan_TributeCollector</defName>
-        <label>etherial tribute collector</label>
+        <label>Ethereal tribute collector</label>
         <requestable>False</requestable>
         <commonality>1</commonality>
         <category>TributeCollector</category>
