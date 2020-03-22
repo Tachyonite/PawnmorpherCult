@@ -154,8 +154,8 @@
             <li>ManualDumb</li>
         </disabledWorkTags>
         <permits>
-            <li>TradeSettlement</li>
-            <li>TradeCaravan</li>
+            <li>EtherTradeSettlement</li>
+            <li>EtherTradeCaravan</li>
             <li>CallEtherMilitaryAidSmall</li>
         </permits>
         <requiredApparel>
@@ -285,8 +285,8 @@
             <li>Mining</li>
         </disabledWorkTags>
         <permits>
-            <li>TradeSettlement</li>
-            <li>TradeCaravan</li>
+            <li>EtherTradeSettlement</li>
+            <li>EtherTradeCaravan</li>
             <li>CallEtherMilitaryAidSmall</li>
             <li>CallEtherMilitaryAidLarge</li>
         </permits>
@@ -419,9 +419,9 @@
             <li>Mining</li>
         </disabledWorkTags>
         <permits>
-            <li>TradeSettlement</li>
-            <li>TradeCaravan</li>
-            <li>TradeOrbital</li>
+            <li>EtherTradeSettlement</li>
+            <li>EtherTradeCaravan</li>
+            <li>EtherTradeOrbital</li>
             <li>CallEtherMilitaryAidSmall</li>
             <li>CallEtherMilitaryAidLarge</li>
             <li>CallEtherMilitaryAidGrand</li>
@@ -572,9 +572,9 @@
             <li>Animals</li>
         </disabledWorkTags>
         <permits>
-            <li>TradeSettlement</li>
-            <li>TradeCaravan</li>
-            <li>TradeOrbital</li>
+            <li>EtherTradeSettlement</li>
+            <li>EtherTradeCaravan</li>
+            <li>EtherTradeOrbital</li>
             <li>CallEtherMilitaryAidSmall</li>
             <li>CallEtherMilitaryAidLarge</li>
             <li>CallEtherMilitaryAidGrand</li>
@@ -721,9 +721,9 @@
             <li>Commoner</li>
         </disabledWorkTags>
         <permits>
-            <li>TradeSettlement</li>
-            <li>TradeCaravan</li>
-            <li>TradeOrbital</li>
+            <li>EtherTradeSettlement</li>
+            <li>EtherTradeCaravan</li>
+            <li>EtherTradeOrbital</li>
             <li>CallEtherMilitaryAidLarge</li>
             <li>CallEtherMilitaryAidGrand</li>
         </permits>

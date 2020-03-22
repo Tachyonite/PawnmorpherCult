@@ -1,4 +1,21 @@
 <Defs>
+
+    
+  <RoyalTitlePermitDef>
+    <defName>EtherTradeSettlement</defName>
+    <label>trade with settlements</label>
+  </RoyalTitlePermitDef>
+
+  <RoyalTitlePermitDef>
+    <defName>EtherTradeCaravan</defName>
+    <label>trade with caravans</label>
+  </RoyalTitlePermitDef>
+  
+  <RoyalTitlePermitDef>
+    <defName>EtherTradeOrbital</defName>
+    <label>trade with orbital traders</label>
+  </RoyalTitlePermitDef>
+  
     
     <RoyalTitlePermitDef>
         <defName>CallEtherMilitaryAidSmall</defName>

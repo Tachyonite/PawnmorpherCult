@@ -1,8 +1,8 @@
 <Defs>
     <FactionDef>
         <defName>EtherCult</defName>
-        <label>shattered empire</label>
-        <categoryTag>Empire</categoryTag>
+        <label>etherial cult</label>
+        <categoryTag>EtherialCult</categoryTag>
         <description>TODO</description>
         <pawnSingular>cultist</pawnSingular>
         <pawnsPlural>cultists</pawnsPlural>
@@ -59,10 +59,10 @@
           <li>EtherTitle</li>
         </royalTitleTags>
         <baseTraderKinds>
-          <li>Base_Empire_Standard</li>
+          <li>Base_EtherCult_Standard</li>
         </baseTraderKinds>
         <caravanTraderKinds>
-          <li>Empire_Caravan_TraderGeneral</li>
+          <li>EtherCult_Caravan_TraderGeneral</li>
         </caravanTraderKinds>
         <royalTitleInheritanceWorkerClass>RoyalTitleInheritanceWorker</royalTitleInheritanceWorkerClass>
         <royalTitleInheritanceRelations>

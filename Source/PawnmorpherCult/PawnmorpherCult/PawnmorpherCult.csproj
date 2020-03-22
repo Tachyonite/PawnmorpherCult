@@ -147,6 +147,7 @@
     <Compile Include="ModInit.cs" />
     <Compile Include="PMCult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Traders\StockGenerator_BuyFormerHuman.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utilities\" />
