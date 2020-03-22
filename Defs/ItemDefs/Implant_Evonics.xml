@@ -1,0 +1,79 @@
+<Defs>
+
+
+  <ThingDef ParentName="BodyPartRoyalBase">
+    <defName>EvonicManipulator</defName>
+    <label>evonic manipulator</label>
+    <description>An injector full of dysfunctional mutagenic mechanites. Delivered directly into the heart, to allow the mechanites to flood the blood system. Via some unknown means, the partaker gains the ability to direct and control these mechanites, making them manifest in all sorts of interesting ways.\n\nIt would appear that they also gain control of ambient mechanites, which makes this a terrifyingly powerful weapon in the right claws.\n\nEach additional boost of mechanites only amplifies their effects. Caution: The cult will not tolerate outsiders using these manipulators.</description>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+      <li>RewardNonEmpireFactionsOnly</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Items/Evonics/EvonicManipulator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(1,1,1)</color>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_RoyalImplant">
+        <implantHediff>PsychicAmplifier</implantHediff>
+      </li>
+      <li Class="CompProperties_Usable">
+        <compClass>CompUsableImplant</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Inject evonic manipulator</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffectInstallImplant">
+        <hediffDef>EvonicManipulator</hediffDef>
+        <bodyPart>Heart</bodyPart>
+        <canUpgrade>true</canUpgrade>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>CompUseEffect_DestroySelf</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>EvonicManipulator</defName>
+    <hediffClass>Hediff_ImplantWithLevel</hediffClass>
+    <descriptionHyperlinks><ThingDef>EvonicManipulator</ThingDef></descriptionHyperlinks>
+    <label>evonic manipulator</label>
+    <labelNoun>an evonic manipulator</labelNoun>
+    <description>An installed evonic manipulator.</description>
+    <spawnThingOnRemoved>EvonicManipulator</spawnThingOnRemoved>
+    <initialSeverity>1</initialSeverity> <!-- Severity is bound to level of implant -->
+    <minSeverity>0</minSeverity>
+    <maxSeverity>6</maxSeverity>
+    <stages>
+      <li>
+	    <label>adherent</label>
+        <minSeverity>1</minSeverity>
+      </li>
+      <li>
+	    <label>follower</label>
+        <minSeverity>2</minSeverity>
+      </li>
+      <li>
+	    <label>acolyte</label>
+        <minSeverity>3</minSeverity>
+      </li>
+      <li>
+	    <label>disciple</label>
+        <minSeverity>4</minSeverity>
+      </li>
+      <li>
+	    <label>preacher</label>
+        <minSeverity>5</minSeverity>
+      </li>
+      <li>
+	    <label>elder</label>
+        <minSeverity>6</minSeverity>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

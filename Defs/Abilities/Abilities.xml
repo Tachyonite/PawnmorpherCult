@@ -1,6 +1,25 @@
 <Defs>
 
-	<AbilityDef ParentName="PsycastBase">
+	<AbilityDef Name="EthercastBase" Abstract="True">
+    <abilityClass>Ability</abilityClass>
+    <statBases>
+      <Ability_Duration>0</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>24.9</range>
+      <requireLineOfSight>True</requireLineOfSight>
+      <warmupTime>1</warmupTime>
+      <targetParams>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetAnimals>False</canTargetAnimals>
+        <thingCategory>Item</thingCategory>
+        <mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+	<AbilityDef ParentName="EthercastBase">
     <defName>EtherPolymorph</defName>
     <label>polymorph</label>
     <description>Quickly transform a humanoid into an animal, with no middle phase.</description>
@@ -22,14 +41,68 @@
       <li Class = "CompProperties_AbilityGiveHediff">
         <compClass>CompAbilityEffect_GiveHediff</compClass>
         <hediffDef>PawnmorphGunshotTF</hediffDef>
-        <psychic>True</psychic>
         <goodwillImpact>-15</goodwillImpact>
         <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
       </li>
     </comps>
   </AbilityDef>
   
-  <AbilityDef ParentName="PsycastBase">
+  <AbilityDef ParentName="EthercastBase">
+    <defName>EtherBullhide</defName>
+    <label>bullhide</label>
+    <description>Mutate thick, hardened skin over the entirety of the body.</description>
+    <level>4</level>
+    <iconPath>UI/Abilities/EtherBullhide</iconPath>
+    <hotKey>Misc11</hotKey>
+    <statBases>
+      <Ability_Duration>60</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <warmupTime>0.25</warmupTime>
+      <range>0</range>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "PawnmorpherCult.Abilities.AddMutationProperties">
+        <mutations>
+          <li>EtherBullhide</li>
+          <li>EtherHorns</li>
+        </mutations>
+		    <applyToSelf>True</applyToSelf>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef ParentName="EthercastBase">
+    <defName>EtherFoilskin</defName>
+    <label>foilskin</label>
+    <description>Mutate a beautiful golden shine over the entire body, making social impact far greater.</description>
+    <level>4</level>
+    <iconPath>UI/Abilities/EtherFoilskin</iconPath>
+    <hotKey>Misc11</hotKey>
+    <statBases>
+      <Ability_Duration>120</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <warmupTime>0.25</warmupTime>
+      <range>0</range>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "PawnmorpherCult.Abilities.AddMutationProperties">
+        <mutations>
+          <li>EtherFoilskin</li>
+        </mutations>
+		    <applyToSelf>True</applyToSelf>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef ParentName="EthercastBase">
     <defName>EtherRazorclaw</defName>
     <label>razorclaw</label>
     <description>Mutate powerful claws that rip and tear in melee combat.</description>
@@ -37,7 +110,6 @@
     <iconPath>UI/Abilities/EtherRazorclaw</iconPath>
     <hotKey>Misc11</hotKey>
     <statBases>
-      <Ability_EntropyGain>15</Ability_EntropyGain>
       <Ability_Duration>60</Ability_Duration>
     </statBases>
     <verbProperties>
@@ -53,7 +125,6 @@
           <li>EtherRazorclaw</li>
         </mutations>
 		    <applyToSelf>True</applyToSelf>
-        <psychic>True</psychic>
       </li>
     </comps>
   </AbilityDef>

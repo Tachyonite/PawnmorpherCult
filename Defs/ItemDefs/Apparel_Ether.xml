@@ -1,7 +1,7 @@
 <Defs>
 
 <ThingDef ParentName="ApparelMakeableBase">
-    <defName>EtherCultistRobe</defName>
+    <defName>Apparel_EtherCultistRobe</defName>
     <label>etherbound robes</label>
     <description>A set of purple and gold robes for followers of Ether. Emblazoned with the Heart and Sight of Ether and bound by a chain, these ceremonial robes represent their desire to break free from the chains of their limiting humanity, and join with the chaotic energy that is Ether herself.</description>
     <graphicData>
@@ -56,6 +56,51 @@
         </li>
       </options>
     </colorGenerator>
+  </ThingDef>
+  
+  <ThingDef ParentName="HatMakeableBase">
+    <defName>Apparel_EtherMask</defName>
+    <label>etherbound mask</label>
+    <description>An facade of the shifting gaze of Ether. Those who wear it show piety to Her.</description>
+    <techLevel>Neolithic</techLevel>
+    <graphicData>
+      <texPath>CultMask/CultMask</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <uiIconScale>1.15</uiIconScale>
+    <statBases>
+      <WorkToMake>3000</WorkToMake>
+      <MaxHitPoints>80</MaxHitPoints>
+      <Mass>1.4</Mass>
+      <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierInsulation_Cold>0.05</StuffEffectMultiplierInsulation_Cold>
+      <StuffEffectMultiplierInsulation_Heat>0.05</StuffEffectMultiplierInsulation_Heat>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <PainShockThreshold>0.10</PainShockThreshold>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>CultMask/CultMask</wornGraphicPath>
+      <hatRenderedFrontOfFace>true</hatRenderedFrontOfFace>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <unfinishedThingDef>UnfinishedSculpture</unfinishedThingDef>
+    </recipeMaker>
   </ThingDef>
 
 </Defs>
