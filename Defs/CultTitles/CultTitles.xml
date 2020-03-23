@@ -10,9 +10,9 @@
     </RoyalTitleDef>
 
     <RoyalTitleDef ParentName="BaseEtherTitle">
-        <defName>Initiate</defName>
-        <label>initiate</label>
-        <description>TODO</description>
+        <defName>Reciever</defName>
+        <label>reciever</label>
+        <description>While not fomally inducted into the cult, becoming a 'Reciever' is the first step. It shows clear intent and interest, and recievers are often asked by higher-ranking members to take the next step.</description>
         <seniority>0</seniority>
         <favorCost>1</favorCost>
         <changeHeirQuestPoints>1000</changeHeirQuestPoints>
@@ -24,11 +24,20 @@
             <EvonicManipulator>1</EvonicManipulator>
         </rewards>
     </RoyalTitleDef>
+	
+	<RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
+        <defName>Initiate</defName>
+        <label>initiate</label>
+        <description>The Initiate is a brave soul who has survived the First Trial of Ether. By attaining this rank, they are allowed to partake of the Evonic Ritual, and bind a special brant of mutagenic mechanites to their form. Initiates are the lowest official rank in the Ethereal society, and often manage housekeeping.</description>
+        <seniority>10</seniority>
+        <favorCost>3</favorCost>
+        <changeHeirQuestPoints>1000</changeHeirQuestPoints>
+    </RoyalTitleDef>
 
     <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
         <defName>Adherent</defName>
         <label>adherent</label>
-        <description>TODO</description>
+        <description>Adherents have proved that they are worthy, but not that they are ready for what lies ahead. Adherents will be expected to gain mutations, or blessings, from Ether -- and these they must accept and flaunt. From here on, Reversion is considered a sin.</description>
         <seniority>100</seniority>
         <favorCost>6</favorCost>
         <changeHeirQuestPoints>1000</changeHeirQuestPoints>
@@ -39,7 +48,7 @@
     <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
         <defName>Follower</defName>
         <label>follower</label>
-        <description>TODO</description>
+        <description>After being baptised in a bath of slurry, an adherent becomes a follower. With it, new mutations are gained, and their evonic abilities only grow stronger. As baptised members of the society, followers are expected to wear the ceremonial robes, and should create a space for themselves to worship in private.</description>
         <seniority>200</seniority>
         <favorCost>6</favorCost>
         <minExpectation>Moderate</minExpectation>
@@ -79,32 +88,6 @@
                 </allowedTags>
             </li>
         </requiredApparel>
-        <throneRoomRequirements>
-            <li Class="RoomRequirement_ThingAnyOf">
-                <things>
-                    <li>Throne</li>
-                    <li>GrandThrone</li>
-                </things>
-            </li>
-            <li Class="RoomRequirement_Area">
-                <area>24</area>
-            </li>
-            <li Class="RoomRequirement_TerrainWithTags">
-                <labelKey>RoomRequirementAllFloored</labelKey>
-                <tags>
-                    <li>Floor</li>
-                    <li>FineFloor</li>
-                </tags>
-            </li>
-            <li Class="RoomRequirement_ThingCount">
-                <thingDef>Brazier</thingDef>
-                <count>2</count>
-            </li>
-            <li Class="RoomRequirement_AllThingsAreGlowing">
-                <labelKey>RoomRequirementAllBraziersMustBeLit</labelKey>
-                <thingDef>Brazier</thingDef>
-            </li>
-        </throneRoomRequirements>
         <bedroomRequirements>
             <li Class="RoomRequirement_Area">
                 <area>16</area>
@@ -137,7 +120,7 @@
     <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
         <defName>Acolyte</defName>
         <label>acolyte</label>
-        <description>TODO</description>
+        <description>With a convert under their belt, an acolyte is formally entered into the global Etherblessed work of preaching. They will be rewarded for preaching the Word of Ether to others, bringing more into the fold. However, these privliges carry with them some weight, as donations will need to be made to support the work.</description>
         <seniority>300</seniority>
         <favorCost>8</favorCost>
         <minExpectation>High</minExpectation>
@@ -185,42 +168,6 @@
                 </allowedTags>
             </li>
         </requiredApparel>
-        <throneRoomRequirements>
-            <li Class="RoomRequirement_ThingAnyOf">
-                <things>
-                    <li>Throne</li>
-                    <li>GrandThrone</li>
-                </things>
-            </li>
-            <li Class="RoomRequirement_Area">
-                <area>30</area>
-            </li>
-            <li Class="RoomRequirement_Impressiveness">
-                <impressiveness>60</impressiveness>
-            </li>
-            <li Class="RoomRequirement_TerrainWithTags">
-                <labelKey>RoomRequirementAllFloored</labelKey>
-                <tags>
-                    <li>Floor</li>
-                    <li>FineFloor</li>
-                </tags>
-            </li>
-            <li Class="RoomRequirement_ThingCount">
-                <thingDef>Brazier</thingDef>
-                <count>2</count>
-            </li>
-            <li Class="RoomRequirement_ThingCount">
-                <thingDef>Column</thingDef>
-                <count>2</count>
-            </li>
-            <li Class="RoomRequirement_Thing">
-                <thingDef>Harp</thingDef>
-            </li>
-            <li Class="RoomRequirement_AllThingsAreGlowing">
-                <labelKey>RoomRequirementAllBraziersMustBeLit</labelKey>
-                <thingDef>Brazier</thingDef>
-            </li>
-        </throneRoomRequirements>
         <bedroomRequirements>
             <li Class="RoomRequirement_Area">
                 <area>24</area>
@@ -262,7 +209,7 @@
     <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
         <defName>Disciple</defName>
         <label>disciple</label>
-        <description>TODO</description>
+        <description>A disciple has clearly proved their willingness to contribute to the cause by donation, or erecting Idols of Ether. At this point, they are an ordained minister, and hence gain techprints for creating exotic mutagens themselves -- and must also preach to their lower followers, or even heathens. This can be done at a temple, which they will now demand.</description>
         <seniority>400</seniority>
         <favorCost>10</favorCost>
         <minExpectation>SkyHigh</minExpectation>
@@ -394,7 +341,7 @@
     <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
         <defName>Preacher</defName>
         <label>preacher</label>
-        <description>TODO</description>
+        <description>With many converts flocking to their side, a Preacher knows their work is never done. Preachers unlock powerful Evonics the likes of which are not known to the wider public, and join part of the sacred class that can emit the cult's brand of mutagenic mechaites around them, causing others to mutate just by proximity. They will require a proper pulpit for them to teach from.</description>
         <seniority>500</seniority>
         <favorCost>14</favorCost>
         <minExpectation>Noble</minExpectation>
@@ -546,7 +493,7 @@
     <RoyalTitleDef ParentName="BaseEtherTitlePsycaster">
         <defName>Elder</defName>
         <label>elder</label>
-        <description>TODO</description>
+        <description>The highest rank the Ethereal society is willing, or able to grant to those not in a direct link with Her. All other ranks reside at the compounds. An Elder is wholly in charge of a colony as their spiritual leader, and has constructed a Great Idol from solid Mutanite that any who wishes can seek out to gain Ether's blessings.</description>
         <seniority>600</seniority>
         <favorCost>20</favorCost>
         <minExpectation>Royal</minExpectation>
@@ -851,19 +798,28 @@
         </foodRequirement>
     </RoyalTitleDef>
 
-    <RoyalTitleDef ParentName="BaseEtherTitleNPC">
-        <defName>Prophet</defName>
-        <label>prophet</label>
-        <description>TODO</description>
+	<RoyalTitleDef ParentName="BaseEtherTitleNPC">
+        <defName>Overseer</defName>
+        <label>overseer</label>
+        <description>Where an Elder manages the spiritual direction of a colony, an Overseer manages the spiritual direction of the Elders. They reside at one of the satellite compounds, communicating with Elders and co-ordinating their efforts to better convert others.</description>
         <seniority>700</seniority>
         <commonality>1</commonality>
         <recruitmentResistanceOffset>125</recruitmentResistanceOffset>
     </RoyalTitleDef>
 
     <RoyalTitleDef ParentName="BaseEtherTitleNPC">
+        <defName>Prophet</defName>
+        <label>prophet</label>
+        <description>In the inner chambers of the inner chambers, lies the circle of the Prophets. They have no self-determination other than to determine the will of Ether, and bestow their wisdom to the lower classes. It is believed that they do not eat nor drink, and that Ether has granted them the ability to sustain their bodies solely on Her Light.</description>
+        <seniority>800</seniority>
+        <commonality>0.5</commonality>
+        <recruitmentResistanceOffset>150</recruitmentResistanceOffset>
+    </RoyalTitleDef>
+
+    <RoyalTitleDef ParentName="BaseEtherTitleNPC">
         <defName>Archprophet</defName>
         <label>archprophet</label>
-        <description>TODO</description>
+        <description>Some say the Archprophet talks to Ether in their Sanctum. Their abilities are so profound and unknowable that none has ever slighted the Archprophet and lived the rest of their days as a human.\n\nThe Archprophet is the leader of the Ethereal society, there is none above them apart from Ether herself.</description>
         <seniority>900</seniority>
         <commonality>0.1</commonality>
         <recruitmentResistanceOffset>200</recruitmentResistanceOffset>

@@ -1,9 +1,9 @@
 <Defs>
     <FactionDef>
         <defName>EtherCult</defName>
-        <label>Ethereal cult</label>
+        <label>Ethereal proselyters</label>
         <categoryTag>EtherealCult</categoryTag>
-        <description>TODO</description>
+        <description>Ethereal proselyters are a group of like-minded individuals who work to promote peace and unity in the Rim by means of spreading their wonderful, Light-bringing teachings to all who will listen and take part in their mysterious rituals. You must work to earn their trust, and only then will they let you see behind the veil.</description>
         <pawnSingular>cultist</pawnSingular>
         <pawnsPlural>cultists</pawnsPlural>
         <listOrderPriority>100</listOrderPriority>
