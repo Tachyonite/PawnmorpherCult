@@ -19,34 +19,7 @@
     </verbProperties>
   </AbilityDef>
 
-	<AbilityDef ParentName="EthercastBase">
-    <defName>EtherPolymorph</defName>
-    <label>polymorph</label>
-    <description>Quickly transform a humanoid into an animal, with no middle phase.</description>
-    <level>2</level>
-    <iconPath>UI/Abilities/EtherPolymorph</iconPath>
-    <hotKey>Misc5</hotKey>
-    <statBases>
-      <Ability_EntropyGain>20</Ability_EntropyGain>
-      <Ability_Duration>30</Ability_Duration>
-    </statBases>
-    <verbProperties>
-      <warmupTime>1</warmupTime>
-      <range>20</range>
-      <targetParams>
-        <canTargetSelf>True</canTargetSelf>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class = "CompProperties_AbilityGiveHediff">
-        <compClass>CompAbilityEffect_GiveHediff</compClass>
-        <hediffDef>PawnmorphGunshotTF</hediffDef>
-        <goodwillImpact>-15</goodwillImpact>
-        <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
-      </li>
-    </comps>
-  </AbilityDef>
-  
+
   <AbilityDef ParentName="EthercastBase">
     <defName>EtherBullhide</defName>
     <label>bullhide</label>

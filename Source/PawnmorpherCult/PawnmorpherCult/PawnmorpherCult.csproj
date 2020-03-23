@@ -143,7 +143,9 @@
   <ItemGroup>
     <Compile Include="Abilities\AbilityCompBase.cs" />
     <Compile Include="Abilities\AddMutation.cs" />
+    <Compile Include="Abilities\PolymorphDuration.cs" />
     <Compile Include="Hediffs\RemoveMutationDuration.cs" />
+    <Compile Include="Hediffs\RemovePolymorphComp.cs" />
     <Compile Include="ModInit.cs" />
     <Compile Include="PMCult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
