@@ -23,32 +23,37 @@ namespace PawnmorpherCult.Quests
         public SlateRef<string> traderTag;
         public SlateRef<Pawn> target;
         public SlateRef<string> storeTfAs;
-        public SlateRef<bool> allAnimals = false; 
+        public SlateRef<bool> allAnimals = false;
+        public SlateRef<string> inSignal; 
         protected override void RunInt()
         {
             var slate = QuestGen.slate;
             var pawn = target.GetValue(slate);
-            var range = sapienceRange.GetValue(slate); 
-            if(pawn == null) throw new QuestException($"required quest parameter {nameof(target)} is not set in node {nameof(TransformPawn)}");
+            var range = sapienceRange.GetValue(slate);
+            if(pawn == null) throw new QuestException($"required quest parameter {nameof(target)} is not set in node {nameof(TransformPawn)}"); 
             var tfTarget = GetTransformations(slate).RandomElement();
-            var tfRequest = new TransformationRequest(tfTarget, pawn)
-            { 
-                maxSeverity = range.max,
-                minSeverity = range.min
-            };
-
-
-            var tfDPawn = MutagenDefOf.defaultMutagen.MutagenCached.Transform(tfRequest);
-            if (tfDPawn == null)
+            if (tfTarget == null)
             {
-                Log.Error($"could not turn {pawn.Label} into {tfTarget.LabelCap}!");
+                Log.Error($"{nameof(TransformPawn)} Could not get valid transformation target!");
                 return; 
             }
 
-            Find.World.GetComponent<PawnmorphGameComp>().AddTransformedPawn(tfDPawn);
-            var storeAs = storeTfAs.GetValue(slate); 
-            if(!string.IsNullOrEmpty(storeAs))
-                slate.Set(storeTfAs.GetValue(slate), tfDPawn.TransformedPawns.First());
+            var sig = (QuestGenUtility.HardcodedSignalWithQuestID(inSignal.GetValue(slate)) ?? slate.Get<string>("inSignal"));
+            var quest = QuestGen.quest; 
+            var tfPart = new Part_TransformPawn()
+            {
+                target = pawn,
+                inSignal = sig,
+                pawnKind = tfTarget,
+                debugLabel = "TransformPawn",
+                maxSapience = range.max,
+                minSapience = range.min,
+
+            };
+            quest.AddPart(tfPart); 
+
+            
+
         }
 
         protected override bool TestRunInt(Slate slate)
