@@ -9420,6 +9420,11 @@
         <member name="F:Pawnmorph.TfSys.TransformationRequest.tale">
             <summary>The tale to record</summary>
         </member>
+        <member name="F:Pawnmorph.TfSys.TransformationRequest.noLetter">
+            <summary>
+            if true, no notification will be sent about the transformation
+            </summary>
+        </member>
         <member name="F:Pawnmorph.TfSys.TransformationRequest.addMutationToOriginal">
             <summary>
             if true add mutation to original
