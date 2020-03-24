@@ -53,7 +53,8 @@ namespace PawnmorpherCult.Quests
             var tfRequest = new TransformationRequest(pawnKind, target)
             {
                 maxSeverity = maxSapience,
-                minSeverity = minSapience
+                minSeverity = minSapience,
+                noLetter = true
             };
 
 
