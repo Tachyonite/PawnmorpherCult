@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Pawnmorph;
 using Pawnmorph.TfSys;
+using Pawnmorph.Utilities;
 using RimWorld.QuestGen;
 using UnityEngine;
 using Verse;
@@ -18,9 +19,11 @@ namespace PawnmorpherCult.Quests
     public class TransformPawn : QuestNode
     {
         public SlateRef<FloatRange> sapienceRange = new FloatRange(0, 1); 
-        public SlateRef<IEnumerable<PawnKindDef>> animalKinds;
+        public SlateRef<IEnumerable<PawnKindDef>> animals;
+        public SlateRef<string> traderTag;
         public SlateRef<Pawn> target;
         public SlateRef<string> storeTfAs;
+        public SlateRef<bool> allAnimals = false; 
         protected override void RunInt()
         {
             var slate = QuestGen.slate;
@@ -57,10 +60,27 @@ namespace PawnmorpherCult.Quests
 
         public IEnumerable<PawnKindDef> GetTransformations(Slate slate)
         {
-            IEnumerable<PawnKindDef> kinds = animalKinds.GetValue(slate);
-            if (kinds == null) kinds = DefDatabase<PawnKindDef>.AllDefs.Where(k => k.RaceProps.Animal);
+            if (allAnimals.GetValue(slate))
+            {
+                foreach (PawnKindDef animal in DefDatabase<PawnKindDef>.AllDefs.Where(k => k.RaceProps.Animal))
+                {
+                    yield return animal; 
+                }
+                yield break;
+            }
 
-            return kinds; 
+            foreach (PawnKindDef pawnKindDef in animals.GetValue(slate).MakeSafe())
+            {
+                yield return pawnKindDef;
+            }
+
+            var tTag = traderTag.GetValue(slate); 
+            if(string.IsNullOrEmpty(tTag)) yield break;
+            foreach (PawnKindDef animal in DefDatabase<PawnKindDef>.AllDefs.Where(k => k.RaceProps.Animal))
+            {
+                if (animal.race.tradeTags?.Contains(tTag) == true) yield return animal; 
+            }
+
         }
     }
 }

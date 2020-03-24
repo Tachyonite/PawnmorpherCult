@@ -89,7 +89,7 @@
 
 
                   <!-- replace description of what the cult wants to do with them -->
-                  <!-- this is for when the cult wants to turn the pawn into an animal/chaomorph -->
+                  <!-- this is for when the cult wants to turn the pawn into an animal -->
                   <li Class="QuestNode_GetRandomElement">
                     <storeAs>dutyDescription</storeAs>
                     <options>
@@ -103,6 +103,30 @@
                   <li Class="QuestNode_Set">
                     <name>cultRequestType</name>
                     <value>transformPawn</value>
+                  </li>
+                </nodes>
+              </li>
+              <li Class="QuestNode_Sequence">
+
+                <selectionWeight>0.5</selectionWeight>
+                <nodes>
+
+
+                  <!-- replace description of what the cult wants to do with them -->
+                  <!-- this is for when the cult wants to turn the pawn into a chaomorph -->
+                  <li Class="QuestNode_GetRandomElement">
+                    <storeAs>dutyDescription</storeAs>
+                    <options>
+                      <li>TODO</li>
+                    </options>
+                  </li>
+                  <li Class="QuestNode_Set">
+                    <name>returnLetterText</name>
+                    <value>TODO</value>
+                  </li>
+                  <li Class="QuestNode_Set">
+                    <name>cultRequestType</name>
+                    <value>transformPawnChaomorph</value>
                   </li>
                 </nodes>
               </li>
@@ -237,8 +261,33 @@
               <!-- insert mutation/tf events here -->
               <!-- need to check for change type set above -->
               <li Class="QuestNode_Equal">
-
-                <node></node>
+                <value1>$cultRequestType</value1>
+                <value>mutatePawn</value>
+                <compareAs>string</compareAs>
+                <node Class="PawnmorpherCult.Quests.AddMutationsToPawn">
+                  <!-- mutation only  -->
+                  <chimera>true</chimera>
+                  <!-- pull all morph mutations -->
+                  <animalClass>Animal</animalClass>
+                  <allowRestricted>true</allowRestricted>
+                  <pawn>$convert</pawn>
+                </node>
+                <elseNode Class="QuestNode_Equal">
+                  <!-- transform them into an animal of some sort  -->
+                  <value1>$cultRequestType</value1>
+                  <value>transformPawnChaomorph</value>
+                  <compareAs>string</compareAs>
+                  <node Class="PawnmorpherCult.Quests.TransformPawn">
+                    <!-- chaomorph -->
+                    <traderTag>AnimalChaotic</traderTag>
+                    <pawn>$convert</pawn>
+                  </node>
+                  <elseNode>
+                    <!-- regular animal  -->
+                    <traderTag>AnimalCommon</traderTag>
+                    <pawn>$convert</pawn>
+                  </elseNode>
+                </elseNode>
               </li>
 
 
