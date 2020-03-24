@@ -149,6 +149,10 @@
     <Compile Include="ModInit.cs" />
     <Compile Include="PMCult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quests\AddMutationsToPawn.cs" />
+    <Compile Include="Quests\Node_GetConvertablePawns.cs" />
+    <Compile Include="Quests\QuestException.cs" />
+    <Compile Include="Quests\TransformPawn.cs" />
     <Compile Include="Traders\StockGenerator_BuyFormerHuman.cs" />
   </ItemGroup>
   <ItemGroup>

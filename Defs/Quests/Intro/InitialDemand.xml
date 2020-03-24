@@ -1,0 +1,234 @@
+<Defs>
+    <QuestScriptDef>
+        <defName>CultIntro_Conversion</defName>
+        <rootMinPoints>250</rootMinPoints>
+        <expireDaysRange>4~8</expireDaysRange>
+        <isRootSpecial>true</isRootSpecial>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName->Covnert Demanded</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+    
+            <!-- Asker is faction leader -->
+            <li>questDescription(asker_factionLeader==True)->TODO</li>
+    
+          </rulesStrings>
+        </questDescriptionRules>
+        
+        <root Class="QuestNode_Sequence">
+          <nodes>
+            <li Class="QuestNode_SubScript">
+              <def>Util_RandomizePointsChallengeRating</def>
+            </li>
+    
+            <!-- Calculate colonist count to lend -->
+            <!-- make this a single, non morphed, pawn -->
+            <li Class="PawnmorpherCult.Quests.GetConvertablePawn">
+              <storeAs>convert</storeAs>
+              <mustBeColonist>true</mustBeColonist>
+            </li>
+    
+            <li Class="QuestNode_GetMapOf">
+              <mapOf>$convert</mapOf>
+            </li>
+    
+            <!-- End if map removed before the quest is accepted -->
+            <li Class="QuestNode_End">
+              <inSignal>map.MapRemoved</inSignal>
+              <outcome>Fail</outcome>
+              <signalListenMode>NotYetAcceptedOnly</signalListenMode>
+            </li>
+    
+            <!--TODO change to  QuestNode_GeneratePawn once we have cult faction leaders -->
+
+            <li Class="QuestNode_GetPawn">
+              <storeAs>asker</storeAs>
+              <mustBeFactionLeader>true</mustBeFactionLeader>
+              <mustHaveRoyalTitleInCurrentFaction>true</mustHaveRoyalTitleInCurrentFaction>
+              <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+              <minTechLevel>Industrial</minTechLevel>
+            </li>
+
+            <!-- Get asker and assign some related text -->
+            <!-- Decide the dutyDescription and entertainerDescriptions so we can use the same text in several letters -->
+            <li Class="QuestNode_RandomNode">
+              <nodes>
+                <!-- insert description of what the cult wants to do with them-->
+                <li Class="QuestNode_Sequence">
+                  
+                  <selectionWeight>0.5</selectionWeight>
+                  <nodes>
+                   
+                    
+                    <!-- replace -->
+                    <li Class="QuestNode_GetRandomElement">
+                      <storeAs>dutyDescription</storeAs>
+                      <options>
+                        <li>gather the harvest</li>
+                        <li>fortify a settlement</li>
+                        <li>set up a settlement</li>
+                        <li>watch for raiders</li>
+                        <li>set up a hospital</li>
+                        <li>contain an outbreak of [disease]</li>
+                      </options>
+                    </li>
+                    <li Class="QuestNode_Set">
+                      <name>returnLetterText</name>
+                      <value>{PAWNS} have returned after helping [asker_nameFull] of [asker_faction_name] to [dutyDescription].</value>
+                    </li>
+                  </nodes>
+                </li>
+              </nodes>
+            </li>
+            
+            <!-- Calculate days to lend colonists for -->
+            <li Class="QuestNode_GetRandomInRangeForChallengeRating">
+              <storeAs>lendForDays</storeAs>
+              <oneStarRange>1~2</oneStarRange>
+              <twoStarRange>1~2</twoStarRange>
+              <threeStarRange>1~2</threeStarRange>
+              <roundRandom>true</roundRandom>
+            </li>
+    
+            <!-- Calculate reward from colonistsToLendCount * lendForDays -->
+            <!-- replace with constant reward -->
+            <li Class="QuestNode_EvaluateSimpleCurve">
+              <value>50</value>
+              <storeAs>rewardValue</storeAs>
+              <curve>
+                <points>
+                  <li>5, 500</li>
+                  <li>50, 1500</li>
+                  <li>200, 4000</li>
+                </points>
+              </curve>
+            </li>
+    
+            <!-- Shuttle -->
+            <li Class="QuestNode_ShuttleDelay">
+              <delayTicks>3500</delayTicks>
+                <node Class="QuestNode_Sequence">
+                  <nodes>
+                    <li Class="QuestNode_GenerateShuttle">
+                      <storeAs>shuttle</storeAs>
+                      <dropEverythingIfUnsatisfied>true</dropEverythingIfUnsatisfied>
+                      <requiredPawns>$convert</requiredPawns>
+                      <leaveImmediatelyWhenSatisfied>true</leaveImmediatelyWhenSatisfied>
+                    </li>
+                    <li Class="QuestNode_SpawnSkyfaller">
+                      <skyfallerDef>ShuttleIncoming</skyfallerDef>
+                      <innerThings>$shuttle</innerThings>
+                      <lookForSafeSpot>True</lookForSafeSpot>
+                      <factionOfForSafeSpot>$asker</factionOfForSafeSpot>
+                    </li>
+                    <li Class="QuestNode_SendShuttleAwayOnCleanup">
+                      <shuttle>$shuttle</shuttle>
+                    </li>
+                    <li Class="QuestNode_Letter">
+                      <label>Shuttle arrived</label>
+                      <text>The shuttle has arrived to collect [convert_nameDef].</text>
+                      <lookTargets>$shuttle</lookTargets>
+                    </li>
+                    <li Class="QuestNode_ShuttleLeaveDelay">
+                      <delayTicks>$(60000)</delayTicks>
+                      <shuttle>$shuttle</shuttle>
+                      <inSignalsDisable>
+                        <li>shuttle.Destroyed</li>
+                        <li>shuttle.SentSatisfied</li>
+                        <li>shuttle.SentUnsatisfied</li>
+                      </inSignalsDisable>
+                      <node Class="QuestNode_Sequence">
+                        <nodes>
+                          <li Class="QuestNode_SendShuttleAway">
+                            <shuttle>$shuttle</shuttle>
+                            <dropEverything>true</dropEverything>
+                          </li>
+                          <li Class="QuestNode_End">
+                            <outcome>Fail</outcome>
+                          </li>
+                        </nodes>
+                      </node>
+                    </li>
+                </nodes>
+              </node>
+            </li>
+    
+            <!-- Shuttle destroyed -->
+            <li Class="QuestNode_Signal">
+              <inSignal>shuttle.Destroyed</inSignal>
+              <node Class="QuestNode_Sequence">
+                <nodes>
+                  <li Class="QuestNode_Letter">
+                    <label>Shuttle destroyed</label>
+                    <text>The shuttle sent to collect colonists has been destroyed.</text>
+                  </li>
+                  <li Class="QuestNode_End">
+                    <outcome>Fail</outcome>
+                  </li>
+                </nodes>
+              </node>
+            </li>
+    
+            <!-- Shuttle sent away -->
+            <li Class="QuestNode_Signal">
+              <inSignal>shuttle.SentSatisfied</inSignal>
+              <node Class="QuestNode_Sequence">
+                <nodes>
+                  <li Class="QuestNode_LendColonistsToFaction">
+                    <shuttle>$shuttle</shuttle>
+                    <lendColonistsToFactionOf>$asker</lendColonistsToFactionOf>
+                    <returnLentColonistsInTicks>$($lendForDays*60000)</returnLentColonistsInTicks>
+                    <outSignalComplete>ColonistsReturned</outSignalComplete>
+                  </li>
+                  <li Class="QuestNode_SendShuttleAway">
+                    <shuttle>$shuttle</shuttle>
+                  </li>
+                  <li Class="QuestNode_Delay">
+                    <delayTicks>$(randInt(300,600))</delayTicks>
+                    <node Class="QuestNode_Sequence">
+                      <nodes>
+                        <li Class="QuestNode_GiveRewards">
+                          <parms>
+                            <allowGoodwill>true</allowGoodwill>
+                            <allowRoyalFavor>true</allowRoyalFavor>
+                          </parms>
+                        </li>
+                      </nodes>
+                    </node>
+                  </li>
+                </nodes>
+              </node>
+            </li>
+    
+            <li Class="QuestNode_Signal">
+              <inSignal>ColonistsReturned</inSignal>
+              <node Class="QuestNode_Sequence">
+                  <!-- insert mutation event here -->
+                <nodes>
+                  <li Class="QuestNode_Letter">
+                    <label>Colonists returned</label>
+                    <text>$returnLetterText</text>
+                    <letterDef>PositiveEvent</letterDef>
+                  </li>
+                  <li Class="QuestNode_End">
+                    <outcome>Success</outcome>
+                  </li>
+                </nodes>
+              </node>
+            </li>
+            
+            <li Class="QuestNode_Signal">
+              <inSignal>shuttle.SentUnsatisfied</inSignal>
+              <node Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </node>
+            </li>
+            
+          </nodes>
+        </root>
+      </QuestScriptDef>
+      
+</Defs>
