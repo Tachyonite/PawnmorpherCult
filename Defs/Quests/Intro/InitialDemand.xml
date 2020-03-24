@@ -6,14 +6,30 @@
     <isRootSpecial>true</isRootSpecial>
     <questNameRules>
       <rulesStrings>
-        <li>questName->Covnert Demanded</li>
+        <li>questName->Convert demanded</li>
+        <li>questName->The tribute</li>
+        <li>questName->The changed</li>
+        <li>questName->A [constAdj] demand</li>
+        <li>questName->A [trialAdj] [suffix]</li>
+        <li>constAdj->changing</li>
+        <li>constAdj->metamorphic</li>
+        <li>constAdj->changing</li>
+        <li>constAdj->morphed</li>
+        <li>constAdj->cautious</li>
+        <li>trialAdj->test</li>
+        <li>trialAdj->show</li>
+        <li>trialAdj->display</li>
+        <li>trialAdj->trial</li>
+        <li>trialAdj->tribute</li>
+		<li>suffix->for Ether</li>
+		<li>suffix->of faith</li>
       </rulesStrings>
     </questNameRules>
     <questDescriptionRules>
       <rulesStrings>
 
         <!-- Asker is faction leader -->
-        <li>questDescription(asker_factionLeader==True)->TODO</li>
+        <li>questDescription(asker_factionLeader==True)->[asker_nameFull] of [asker_faction_name] has given a demand to send them tributes. These may be colonists or prisoners, but be careful -- who knows in what state they'll return.</li>
 
       </rulesStrings>
     </questDescriptionRules>
@@ -74,7 +90,7 @@
                 <li Class="QuestNode_GetRandomElement">
                   <storeAs>dutyDescription</storeAs>
                   <options>
-                    <li>TODO</li>
+                    <li>[asker_nameDef] assures you that they are only looking to trial some minor, possibly beneficial mutations. This process will take 3 days, and then they will be returned.</li>
                   </options>
                 </li>
                 <li Class="QuestNode_Set">
@@ -99,7 +115,7 @@
                 <li Class="QuestNode_GetRandomElement">
                   <storeAs>dutyDescription</storeAs>
                   <options>
-                    <li>TODO</li>
+                    <li>[asker_nameDef] does not provide any context on why they want them.</li>
                   </options>
                 </li>
                 <li Class="QuestNode_Set">
@@ -124,7 +140,7 @@
                 <li Class="QuestNode_GetRandomElement">
                   <storeAs>dutyDescription</storeAs>
                   <options>
-                    <li>TODO</li>
+                    <li>[asker_nameDef] mentions that you should send a pawn who could be far more useful as something else.</li>
                   </options>
                 </li>
                 <li Class="QuestNode_Set">
