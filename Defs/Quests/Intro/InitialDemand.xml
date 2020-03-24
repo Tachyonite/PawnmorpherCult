@@ -54,11 +54,15 @@
 
         <!-- Get asker and assign some related text -->
         <!-- Decide the dutyDescription and entertainerDescriptions so we can use the same text in several letters -->
+
+
         <li Class="QuestNode_RandomNode">
           <nodes>
             <!-- insert description of what the cult wants to do with them
                   need a node for each type 
                 -->
+
+            <!-- just mutate them -->
             <li Class="QuestNode_Sequence">
 
               <selectionWeight>0.5</selectionWeight>
@@ -82,54 +86,56 @@
                   <value>mutatePawn</value>
                 </li>
               </nodes>
-              <li Class="QuestNode_Sequence">
+            </li>
+            <!-- transform them into a common animal -->
+            <li Class="QuestNode_Sequence">
 
-                <selectionWeight>0.5</selectionWeight>
-                <nodes>
-
-
-                  <!-- replace description of what the cult wants to do with them -->
-                  <!-- this is for when the cult wants to turn the pawn into an animal -->
-                  <li Class="QuestNode_GetRandomElement">
-                    <storeAs>dutyDescription</storeAs>
-                    <options>
-                      <li>TODO</li>
-                    </options>
-                  </li>
-                  <li Class="QuestNode_Set">
-                    <name>returnLetterText</name>
-                    <value>TODO</value>
-                  </li>
-                  <li Class="QuestNode_Set">
-                    <name>cultRequestType</name>
-                    <value>transformPawn</value>
-                  </li>
-                </nodes>
-              </li>
-              <li Class="QuestNode_Sequence">
-
-                <selectionWeight>0.5</selectionWeight>
-                <nodes>
+              <selectionWeight>0.5</selectionWeight>
+              <nodes>
 
 
-                  <!-- replace description of what the cult wants to do with them -->
-                  <!-- this is for when the cult wants to turn the pawn into a chaomorph -->
-                  <li Class="QuestNode_GetRandomElement">
-                    <storeAs>dutyDescription</storeAs>
-                    <options>
-                      <li>TODO</li>
-                    </options>
-                  </li>
-                  <li Class="QuestNode_Set">
-                    <name>returnLetterText</name>
-                    <value>TODO</value>
-                  </li>
-                  <li Class="QuestNode_Set">
-                    <name>cultRequestType</name>
-                    <value>transformPawnChaomorph</value>
-                  </li>
-                </nodes>
-              </li>
+                <!-- replace description of what the cult wants to do with them -->
+                <!-- this is for when the cult wants to turn the pawn into an animal -->
+                <li Class="QuestNode_GetRandomElement">
+                  <storeAs>dutyDescription</storeAs>
+                  <options>
+                    <li>TODO</li>
+                  </options>
+                </li>
+                <li Class="QuestNode_Set">
+                  <name>returnLetterText</name>
+                  <value>TODO</value>
+                </li>
+                <li Class="QuestNode_Set">
+                  <name>cultRequestType</name>
+                  <value>transformPawn</value>
+                </li>
+              </nodes>
+            </li>
+            <!-- transform them into a chaomorph  -->
+            <li Class="QuestNode_Sequence">
+
+              <selectionWeight>0.5</selectionWeight>
+              <nodes>
+
+
+                <!-- replace description of what the cult wants to do with them -->
+                <!-- this is for when the cult wants to turn the pawn into a chaomorph -->
+                <li Class="QuestNode_GetRandomElement">
+                  <storeAs>dutyDescription</storeAs>
+                  <options>
+                    <li>TODO</li>
+                  </options>
+                </li>
+                <li Class="QuestNode_Set">
+                  <name>returnLetterText</name>
+                  <value>TODO</value>
+                </li>
+                <li Class="QuestNode_Set">
+                  <name>cultRequestType</name>
+                  <value>transformPawnChaomorph</value>
+                </li>
+              </nodes>
             </li>
           </nodes>
         </li>
@@ -262,7 +268,7 @@
               <!-- need to check for change type set above -->
               <li Class="QuestNode_Equal">
                 <value1>$cultRequestType</value1>
-                <value>mutatePawn</value>
+                <value2>mutatePawn</value2>
                 <compareAs>string</compareAs>
                 <node Class="PawnmorpherCult.Quests.AddMutationsToPawn">
                   <!-- mutation only  -->
@@ -275,17 +281,17 @@
                 <elseNode Class="QuestNode_Equal">
                   <!-- transform them into an animal of some sort  -->
                   <value1>$cultRequestType</value1>
-                  <value>transformPawnChaomorph</value>
+                  <value2>transformPawnChaomorph</value2>
                   <compareAs>string</compareAs>
                   <node Class="PawnmorpherCult.Quests.TransformPawn">
                     <!-- chaomorph -->
                     <traderTag>AnimalChaotic</traderTag>
-                    <pawn>$convert</pawn>
+                    <target>$convert</target>
                   </node>
-                  <elseNode>
+                  <elseNode Class="PawnmorpherCult.Quests.TransformPawn">
                     <!-- regular animal  -->
                     <traderTag>AnimalCommon</traderTag>
-                    <pawn>$convert</pawn>
+                    <target>$convert</target>
                   </elseNode>
                 </elseNode>
               </li>

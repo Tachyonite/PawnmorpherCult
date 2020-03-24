@@ -46,8 +46,9 @@ namespace PawnmorpherCult.Quests
             }
 
             Find.World.GetComponent<PawnmorphGameComp>().AddTransformedPawn(tfDPawn);
-
-            slate.Set(storeTfAs.GetValue(slate), tfDPawn.TransformedPawns.First());
+            var storeAs = storeTfAs.GetValue(slate); 
+            if(!string.IsNullOrEmpty(storeAs))
+                slate.Set(storeTfAs.GetValue(slate), tfDPawn.TransformedPawns.First());
         }
 
         protected override bool TestRunInt(Slate slate)
