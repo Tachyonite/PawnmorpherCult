@@ -233,15 +233,23 @@
           <inSignal>shuttle.SentSatisfied</inSignal>
           <node Class="QuestNode_Sequence">
             <nodes>
+
+
               <li Class="QuestNode_LendColonistsToFaction">
                 <shuttle>$shuttle</shuttle>
                 <lendColonistsToFactionOf>$asker</lendColonistsToFactionOf>
                 <returnLentColonistsInTicks>$($lendForDays*60000)</returnLentColonistsInTicks>
                 <outSignalComplete>ColonistsReturned</outSignalComplete>
               </li>
+
+
+
+
               <li Class="QuestNode_SendShuttleAway">
                 <shuttle>$shuttle</shuttle>
               </li>
+
+
               <li Class="QuestNode_Delay">
                 <delayTicks>$(randInt(300,600))</delayTicks>
                 <node Class="QuestNode_Sequence">
@@ -252,17 +260,7 @@
                         <allowRoyalFavor>true</allowRoyalFavor>
                       </parms>
                     </li>
-                  </nodes>
-                </node>
-              </li>
-            </nodes>
-          </node>
-        </li>
 
-        <li Class="QuestNode_Signal">
-          <inSignal>ColonistsReturned</inSignal>
-          <node Class="QuestNode_Sequence">
-            <nodes>
 
               <!-- insert mutation/tf events here -->
               <!-- need to check for change type set above -->
@@ -295,6 +293,21 @@
                   </elseNode>
                 </elseNode>
               </li>
+
+                  </nodes>
+                </node>
+              </li>
+
+
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>ColonistsReturned</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+
 
 
               <li Class="QuestNode_Letter">

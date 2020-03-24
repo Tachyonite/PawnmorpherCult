@@ -25,7 +25,9 @@ namespace PawnmorpherCult.Quests
         public SlateRef<bool> chimera; 
         public SlateRef<IntRange> addRange;
         public SlateRef<bool> allowRestricted; 
-        public SlateRef<Pawn> pawn;  
+        public SlateRef<Pawn> pawn;
+
+        public SlateRef<string> inSignal; 
 
         protected override void RunInt()
         {
@@ -37,18 +39,22 @@ namespace PawnmorpherCult.Quests
             var mPawn = pawn.GetValue(slate); 
             
             if(mPawn == null) throw new QuestException($"required pawn ${nameof(pawn)}/\"{((ISlateRef) pawn).SlateRef}\" is missing!");
+            var sig = (QuestGenUtility.HardcodedSignalWithQuestID(inSignal.GetValue(slate)) ?? slate.Get<string>("inSignal"));
 
 
             var allMutations = GetAllAvailableMutations(slate).Distinct().ToList();
-            int added = 0;
-            while (added < numMutations)
+            var part = new Part_MutatePawn()
             {
-                if(allMutations.Count == 0) break;
-                var rElement = allMutations.RandElement();
-                allMutations.Remove(rElement);
-                if (MutationUtilities.AddMutation(mPawn, rElement))
-                    added++; 
-            }
+                target = mPawn,
+                countToAdd = numMutations,
+                debugLabel = "Mutate Pawn",
+                mutations = allMutations,
+                inSignal = sig
+            };
+
+            QuestGen.quest.AddPart(part); 
+
+            
 
         }
 
