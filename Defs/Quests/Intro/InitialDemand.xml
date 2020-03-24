@@ -95,7 +95,7 @@
                 </li>
                 <li Class="QuestNode_Set">
                   <name>returnLetterText</name>
-                  <value>TODO</value>
+                  <value>[convert_nameDef] has returned from [asker_faction_name], slightly more mutated than before.</value>
                 </li>
                 <li Class="QuestNode_Set">
                   <name>cultRequestType</name>
@@ -120,7 +120,7 @@
                 </li>
                 <li Class="QuestNode_Set">
                   <name>returnLetterText</name>
-                  <value>TODO</value>
+                  <value>[convert_nameDef] has returned from [asker_faction_name]...though not as they were.</value>
                 </li>
                 <li Class="QuestNode_Set">
                   <name>cultRequestType</name>
@@ -145,7 +145,7 @@
                 </li>
                 <li Class="QuestNode_Set">
                   <name>returnLetterText</name>
-                  <value>TODO</value>
+                  <value>[convert_nameDef] has returned from [asker_faction_name]...though not as they were.</value>
                 </li>
                 <li Class="QuestNode_Set">
                   <name>cultRequestType</name>
