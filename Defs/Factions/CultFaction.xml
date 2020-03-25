@@ -19,7 +19,7 @@
         <settlementNameMaker>NamerSettlementEtherCult</settlementNameMaker>
         <pawnNameMaker>NamerPersonEtherCult</pawnNameMaker>
         <pawnNameMakerFemale>NamerPersonEtherCultFemale</pawnNameMakerFemale>
-        <factionIconPath>World/WorldObjects/Expanding/Empire</factionIconPath>
+        <factionIconPath>UI/Faction/ExpandingCult</factionIconPath>
         <techLevel>Ultra</techLevel>
         <!-- todo backstories -->
         <backstoryFilters>

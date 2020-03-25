@@ -9,29 +9,74 @@
     </include>
     <rulePack>
       <rulesStrings>
-        <li>r_name(p=2)->[empire] of [ofThing]</li>
-        <li>r_name(p=2)->The [empire] of [ofThing]</li>
-        <li>r_name->The Exodus [empire]</li>
-        <li>r_name->The Refugee [empire]</li>
-        <li>r_name->The Broken [empire]</li>
-        <li>r_name->The Shattered [empire]</li>
-        <li>r_name->The Fallen [empire]</li>
-        <li>r_name->The [Color] [empire]</li>
-
-        <li>empire(p=4)->Empire</li>
-        <li>empire->Commonwealth</li>
-        <li>empire->Imperium</li>
-        <li>empire->Dominion</li>
-        <li>empire->Sovereignty</li>
-
-        <li>ofThing(p=4)->[WordImperial]</li>
-        <li>ofThing->the Sun</li>
-        <li>ofThing->the Moon</li>
-        <li>ofThing->the Universe</li>
-        <li>ofThing->God</li>
-        <li>ofThing->Perfection</li>
-        <li>ofThing->Eternity</li>
-        <li>ofThing->the Spirit</li>
+        <li>r_name->The [church] of [esoThing]</li>
+        <li>r_name(p=3)->Ether's [churchAct]</li>
+        <li>r_name->Ether's [adj] [churchAct]</li>
+        <li>r_name(p=3)->[churchAct] of Ether</li>
+        <li>r_name->The [churchAct] of Ether</li>
+        <li>r_name->[adj] [churchAct] of Ether</li>
+		
+        <li>adj->True</li>
+        <li>adj->First</li>
+        <li>adj->Holy</li>
+		
+        <li>churchAct->Proselyters</li>
+        <li>churchAct->Chosen</li>
+        <li>churchAct->Worshippers</li>
+        <li>churchAct->Students</li>
+        <li>churchAct->Prayerful</li>
+        <li>churchAct->Devoted</li>
+        <li>churchAct->Bound</li>
+        <li>churchAct->Witnesses</li>
+        <li>churchAct->Preachers</li>
+        <li>churchAct->Seen</li>
+        <li>churchAct->Children</li>
+        <li>churchAct->Creation</li>
+        <li>churchAct->Gathered</li>
+        <li>churchAct->Lambs</li>
+        <li>churchAct->Flock</li>
+        <li>churchAct->Beauty</li>
+        <li>churchAct->Forms</li>
+        <li>churchAct->Bodies</li>
+        <li>churchAct->Manifest</li>
+        <li>churchAct->Remnant</li>
+        <li>churchAct->Sheep</li>
+        <li>churchAct->Many</li>
+        <li>churchAct->Anointed</li>
+        <li>churchAct->Begotten</li>
+		
+        <li>church->Church</li>
+        <li>church->Convent</li>
+        <li>church->Commune</li>
+        <li>church->Monastery</li>
+        <li>church->Hall</li>
+        <li>church->Chambers</li>
+        <li>church->Cult</li>
+        <li>church->Society</li>
+        <li>church->Organisation</li>
+        <li>church->Circle</li>
+        <li>church->Gathering</li>
+        <li>church->Kingdom</li>
+		
+        <li>esoThing->Clay</li>
+        <li>esoThing->Potters</li>
+        <li>esoThing->Change</li>
+        <li>esoThing->Fauna</li>
+        <li>esoThing->Gardens</li>
+        <li>esoThing->Esoteria</li>
+        <li>esoThing->Corradescence</li>
+        <li>esoThing->Reformation</li>
+        <li>esoThing->Form</li>
+        <li>esoThing->Body</li>
+        <li>esoThing->Warping</li>
+        <li>esoThing->Transmutation</li>
+        <li>esoThing->Wellwater</li>
+        <li>esoThing->Wax</li>
+        <li>esoThing->Candles</li>
+        <li>esoThing->Becoming</li>
+        <li>esoThing->Divergence</li>
+        <li>esoThing->Morphosis</li>
+        
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -43,34 +88,42 @@
     </include>
     <rulePack>
       <rulesStrings>
-        <li>r_name->[townname_wordgen]</li>
+        <li>r_name(p=4)->[townname_wordgen]</li>
         <li>r_name->[townname_fixed]</li>
 
-        <li>townname_wordgen->[WordImperial]</li>
-        <li>townname_wordgen->[WordImperial][townend]</li>
-        <li>townend(p=3)->ium</li>
-        <li>townend(p=3)->ior</li>
-        <li>townend(p=3)->polis</li>
-        <li>townend->nor</li>
-        <li>townend->lan</li>
-        <li>townend->lax</li>
-        <li>townend->lix</li>
-        <li>townend->lin</li>
-        <li>townend->lian</li>
-        <li>townend->phrum</li>
-        <li>townend->phor</li>
-        <li>townend->teor</li>
-        <li>townend->ople</li>
-        <li>townend->opium</li>
-        <li>townend->or</li>
-        <li>townend->aetor</li>
-        <li>townend->aeum</li>
-        <li>townend->aetium</li>
-        <li>townend->am</li>
-        <li>townend->aeum</li>
+        <li>townname_wordgen->[WordCultist]</li>
+        <li>townname_wordgen->[WordCultist] [churchPlace]</li>
+        <li>townname_wordgen->[WordCultist][townend]</li>
+		
+        <li>churchPlace(p=3)->Circle</li>
+        <li>churchPlace(p=3)->Hall</li>
+        <li>churchPlace(p=3)->Commune</li>
+        <li>churchPlace->Path</li>
+        <li>churchPlace->Keep</li>
+        <li>churchPlace->Grove</li>
+        <li>churchPlace->Burrow</li>
+        <li>churchPlace->Garden</li>
+        <li>churchPlace->Chapel</li>
+        <li>churchPlace->Monastery</li>
+        <li>churchPlace->Steeple</li>
+		
+        <li>townend->lyx</li>
+        <li>townend->tone</li>
+        <li>townend->'s Hill</li>
+        <li>townend->'s Cave</li>
+        <li>townend->'s River</li>
+        <li>townend->'s Hall</li>
+        <li>townend->'s Grove</li>
+        <li>townend->aria</li>
+        <li>townend->aryx</li>
+        <li>townend->ael</li>
+        <li>townend->axia</li>
+        <li>townend->arymma</li>
+        <li>townend->aro</li>
+        <li>townend->aal</li>
       </rulesStrings>
       <rulesFiles>
-        <li>townname_fixed->Names/EmpireTown</li>
+        <li>townname_fixed->Names/Ethereal_Town</li>
       </rulesFiles>
     </rulePack>
   </RulePackDef>
@@ -82,9 +135,9 @@
     </include>
     <rulePack>
       <rulesStrings>
-        <li>r_name(p=3)->[ImperialNameFirstMale] [ImperialNameLast]</li>
-        <li>r_name(p=2)->[ImperialNameFirstMale] [WordImperial]</li>
-        <li>r_name(p=2)->[WordImperial] [WordImperial]</li>
+        <li>r_name(p=3)->Brother&#160;[EtherealNameFirstMale] [EtherealNameLast]</li>
+        <li>r_name(p=2)->Brother&#160;[EtherealNameFirstMale] [WordCultist]</li>
+        <li>r_name(p=2)->Brother&#160;[WordCultist] [WordCultist]</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -96,25 +149,26 @@
     </include>
     <rulePack>
       <rulesStrings>
-        <li>r_name(p=3)->[ImperialNameFirstFemale] [ImperialNameLast]</li>
-        <li>r_name(p=2)->[ImperialNameFirstFemale] [WordImperial]</li>
-        <li>r_name(p=2)->[WordImperial] [WordImperial]</li>
+        <li>r_name(p=3)->Sister&#160;[EtherealNameFirstFemale] [EtherealNameLast]</li>
+        <li>r_name(p=2)->Sister&#160;[EtherealNameFirstFemale] [WordCultist]</li>
+        <li>r_name(p=2)->Sister&#160;[SylCult] [SylCult]</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
 
-  <RulePackDef>
+<RulePackDef>
     <defName>CultNameUtility</defName>
     <rulePack>
       <rulesStrings>
-        <li>WordImperial(p=4)->[SylB][SylB]</li>
-        <li>WordImperial(p=2)->[SylB][SylB][SylB]</li>
-        <li>WordImperial(p=0.2)->[SylB][SylB][SylB][SylB]</li>
+        <li>WordCultist(p=4)->[SylCult][SylCult]</li>
+        <li>WordCultist(p=2)->[SylCult][SylCult][SylCult]</li>
+        <li>WordCultist(p=0.2)->[SylCult][SylCult][SylCult][SylCult]</li>
       </rulesStrings>
       <rulesFiles>
-        <li>ImperialNameFirstMale->Names/Imperial_First_Male</li>
-        <li>ImperialNameFirstFemale->Names/Imperial_First_Female</li>
-        <li>ImperialNameLast->Names/Imperial_Last</li>
+        <li>EtherealNameFirstMale->Names/Ethereal_First_Male</li>
+        <li>EtherealNameFirstFemale->Names/Ethereal_First_Female</li>
+        <li>EtherealNameLast->Names/Ethereal_Last</li>
+		<li>SylCult->Names/Cult_Syllables</li>
       </rulesFiles>
     </rulePack>
   </RulePackDef>
