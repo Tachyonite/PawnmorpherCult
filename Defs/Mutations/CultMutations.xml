@@ -1,0 +1,193 @@
+<Defs>
+	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphPart">
+		<defName>EtherMaterialTalons</defName>
+		<label>talons</label>
+		<description>The fingernails on this hand have grown out into talons.</description>
+		<parts>
+			<li>Hand</li>
+		</parts>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>bone talons</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.2</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>stone talons</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.4</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>metal talons</labelOverride>
+                <partEfficiencyOffset>0.1</partEfficiencyOffset>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.6</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>vine talons</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.8</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>crystal talons</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>1</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>ethereal talons</labelOverride>
+            </li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>talons</label>
+						<labelUsedInLogging>False</labelUsedInLogging>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>13.0</power>
+						<cooldownTime>1.5</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<surpriseAttack>
+							<extraMeleeDamages>
+								<li>
+									<def>Stun</def>
+									<amount>14</amount>
+								</li>
+							</extraMeleeDamages>
+						</surpriseAttack>
+					</li>
+				</tools>
+			</li>
+		</comps>
+	</Pawnmorph.Hediffs.MutationDef>
+	
+	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphPart">
+		<defName>EtherMaterialBluntHand</defName>
+		<label>club</label>
+		<description>This hand has fused into a blunt weapon, very effective but not useful at being a hand.</description>
+		<parts>
+			<li>Hand</li>
+		</parts>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>bone talons</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.2</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>stone talons</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.4</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>metal talons</labelOverride>
+                <partEfficiencyOffset>0.1</partEfficiencyOffset>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.6</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>vine talons</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.8</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>crystal talons</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>1</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>ethereal talons</labelOverride>
+            </li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>talons</label>
+						<labelUsedInLogging>False</labelUsedInLogging>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>13.0</power>
+						<cooldownTime>1.5</cooldownTime>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<surpriseAttack>
+							<extraMeleeDamages>
+								<li>
+									<def>Stun</def>
+									<amount>14</amount>
+								</li>
+							</extraMeleeDamages>
+						</surpriseAttack>
+					</li>
+				</tools>
+			</li>
+		</comps>
+	</Pawnmorph.Hediffs.MutationDef>
+	
+	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphPart">
+		<defName>EtherMaterialArm</defName>
+		<label>warped arm</label>
+		<description>The material of this arm has shifted to a different state of matter.</description>
+		<parts>
+			<li>Arm</li>
+		</parts>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>bone plated</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.2</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>solid stone</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.4</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>solid metal</labelOverride>
+                <partEfficiencyOffset>0.1</partEfficiencyOffset>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.6</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>meshed vine</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.8</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>vibrant crystal</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>1</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>ethereal matter</labelOverride>
+            </li>
+		</stages>
+	</Pawnmorph.Hediffs.MutationDef>
+	
+	<Pawnmorph.Hediffs.MutationDef ParentName="PawnmorphPart">
+		<defName>EtherMaterialLeg</defName>
+		<label>warped leg</label>
+		<description>The material of this leg has shifted to a different state of matter.</description>
+		<parts>
+			<li>Leg</li>
+		</parts>
+		<stages>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>bone plated</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.2</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>solid stone</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.4</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>solid metal</labelOverride>
+                <partEfficiencyOffset>0.1</partEfficiencyOffset>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.6</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>meshed vine</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>0.8</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>vibrant crystal</labelOverride>
+            </li>
+			<li Class="Pawnmorph.Hediffs.MutationStage">
+                <minSeverity>1</minSeverity> <!-- only pawns with the Paragon aspect can get this stage -->
+                <labelOverride>ethereal matter</labelOverride>
+            </li>
+		</stages>
+	</Pawnmorph.Hediffs.MutationDef>
+</Defs>

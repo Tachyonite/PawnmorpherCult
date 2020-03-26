@@ -1,0 +1,191 @@
+<Defs>
+
+  
+  <PawnKindDef Name="CultistBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>EtherCult</defaultFactionType>
+    <maxGenerationAge>80</maxGenerationAge>
+    <backstoryCryptosleepCommonality>0.08</backstoryCryptosleepCommonality>
+    <backstoryFiltersOverride>
+      <li>
+        <categories>
+          <li>ImperialRoyal</li>
+        </categories>
+      </li>
+    </backstoryFiltersOverride>
+    <royalTitleChance>1</royalTitleChance>
+    <baseRecruitDifficulty>0.90</baseRecruitDifficulty>
+    <chemicalAddictionChance>0.05</chemicalAddictionChance>
+    <itemQuality>Excellent</itemQuality>
+    <combatPower>150</combatPower>
+    <weaponMoney>2600~3100</weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+      <li>MedievalMeleeBasic</li>
+    </weaponTags>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <apparelMoney>1000~1500</apparelMoney>
+    <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+    <apparelDisallowTags>
+      <li>Western</li>
+    </apparelDisallowTags>
+    <techHediffsChance>0.15</techHediffsChance>
+    <techHediffsMoney>500~1500</techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsDisallowTags>
+      <li>PainCauser</li>
+    </techHediffsDisallowTags>
+    <hairTags>
+      <li>Royalty</li>
+    </hairTags>
+    <disallowedTraits>
+      <li>Nudist</li>
+    </disallowedTraits>
+	<!-- TODO: ADD CULTIST MUTATIONS WHEN THOSE ARE DONE-->
+	<modExtensions>
+      <li Class="Pawnmorph.MorphPawnKindExtension">
+        <morphs>
+            <li>BoarMorph</li>
+			<li>CatMorph</li>
+			<li>FoxMorph</li>
+			<li>CowMorph</li>
+			<li>HuskyMorph</li>
+			<li>ChookMorph</li>
+			<li>RatMorph</li>
+			<li>PigMorph</li>
+			<li>DeerMorph</li>
+			<li>BearMorph</li>
+			<li>MonkeyMorph</li>
+			<li>WargMorph</li>
+			<li>AlpacaMorph</li>
+			<li>WolfMorph</li>
+        </morphs>
+        <hediffRange>0~10</hediffRange>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="CultistBase">
+    <defName>EtherCult_Ranked_Wimp</defName>
+    <label>ether priest</label>
+    <titleSelectOne>
+      <li>Follower</li>
+      <li>Acolyte</li>
+      <li>Disciple</li>
+      <li>Preacher</li>
+      <li>Elder</li>
+    </titleSelectOne>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>FullHead</bodyPartGroup>
+        <requiredTag>EtherTier2</requiredTag>
+      </li>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>Shell</apparelLayer>
+        <requiredTag>EtherTier2</requiredTag>
+      </li>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>Middle</apparelLayer>
+        <requiredTag>RoyalTier5</requiredTag>
+      </li>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>OnSkin</apparelLayer>
+        <requiredTag>RoyalTier2</requiredTag>
+      </li>
+    </specificApparelRequirements>
+    <weaponTags Inherit="False" />
+    <techHediffsMoney>0</techHediffsMoney>
+    <disallowedTraits>
+      <li>Tough</li>
+    </disallowedTraits>
+    <allowRoyalRoomRequirements>False</allowRoyalRoomRequirements>
+    <allowRoyalApparelRequirements>False</allowRoyalApparelRequirements>
+  </PawnKindDef>
+  
+  <PawnKindDef Name="CultFighterBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>EtherCult</defaultFactionType>
+    <maxGenerationAge>55</maxGenerationAge>
+    <backstoryCryptosleepCommonality>0.08</backstoryCryptosleepCommonality>
+    <backstoryFiltersOverride>
+      <li>
+        <categories>
+          <li>ImperialFighter</li>
+        </categories>
+      </li>
+    </backstoryFiltersOverride>
+    <chemicalAddictionChance>0.1</chemicalAddictionChance>
+    <combatEnhancingDrugsChance>0.15</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
+    <invNutrition>2.55</invNutrition>
+    <itemQuality>Normal</itemQuality>
+    <weaponMoney>1100~2500</weaponMoney>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <apparelMoney>1250~2500</apparelMoney>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialMilitaryBasic</li>
+    </apparelTags>
+    <apparelDisallowTags>
+      <li>Western</li>
+    </apparelDisallowTags>
+    <techHediffsChance>0</techHediffsChance>
+    <biocodeWeaponChance>0.15</biocodeWeaponChance>
+	<modExtensions>
+      <li Class="Pawnmorph.MorphPawnKindExtension">
+        <morphs>
+            <li>BoarMorph</li>
+			<li>CatMorph</li>
+			<li>FoxMorph</li>
+			<li>CowMorph</li>
+			<li>HuskyMorph</li>
+			<li>ChookMorph</li>
+			<li>RatMorph</li>
+			<li>PigMorph</li>
+			<li>DeerMorph</li>
+			<li>BearMorph</li>
+			<li>MonkeyMorph</li>
+			<li>WargMorph</li>
+			<li>AlpacaMorph</li>
+			<li>WolfMorph</li>
+        </morphs>
+        <hediffRange>0~10</hediffRange>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <!-- Trooper -->
+
+  <PawnKindDef Name="CultFanaticBase" Abstract="True" ParentName="CultFighterBase">
+    <combatPower>60</combatPower>
+    <apparelMoney>2000~6000</apparelMoney>
+    <weaponTags>
+      <li>IndustrialGun</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="CultFanaticBase">
+    <defName>EtherCult_Fanatic</defName>
+    <label>fanatic</label>
+    <apparelColor>(130,130,130)</apparelColor>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>4~10</range>
+      </li>
+    </skills>
+    <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+  </PawnKindDef>
+
+
+</Defs>

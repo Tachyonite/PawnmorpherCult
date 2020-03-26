@@ -1,0 +1,46 @@
+<Defs>
+
+
+  <PawnKindDef ParentName="RoyalBase">
+    <defName>Empire_Royal_NobleWimp</defName>
+    <label>noble</label>
+    <titleSelectOne>
+      <li>Knight</li>
+      <li>Praetor</li>
+      <li>Baron</li>
+      <li>Count</li>
+      <li>Duke</li>
+    </titleSelectOne>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>UpperHead</bodyPartGroup>
+        <requiredTag>RoyalTier7</requiredTag>
+        <stuff>Steel</stuff>
+      </li>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>Shell</apparelLayer>
+        <requiredTag>RoyalTier6</requiredTag>
+      </li>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>Middle</apparelLayer>
+        <requiredTag>RoyalTier5</requiredTag>
+      </li>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <apparelLayer>OnSkin</apparelLayer>
+        <requiredTag>RoyalTier2</requiredTag>
+      </li>
+    </specificApparelRequirements>
+    <weaponTags Inherit="False" />
+    <techHediffsMoney>0</techHediffsMoney>
+    <disallowedTraits>
+      <li>Tough</li>
+    </disallowedTraits>
+    <allowRoyalRoomRequirements>False</allowRoyalRoomRequirements>
+    <allowRoyalApparelRequirements>False</allowRoyalApparelRequirements>
+  </PawnKindDef>
+
+
+</Defs>
