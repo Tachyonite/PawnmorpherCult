@@ -58,14 +58,10 @@
           <signalListenMode>NotYetAcceptedOnly</signalListenMode>
         </li>
 
-        <!--TODO change to  QuestNode_GeneratePawn once we have cult faction leaders -->
-
-        <li Class="QuestNode_GetPawn">
+        <li Class="QuestNode_GeneratePawn">
+          <kindDef>EtherCult_Ranked_Wimp</kindDef>
           <storeAs>asker</storeAs>
-          <mustBeFactionLeader>true</mustBeFactionLeader>
-          <mustHaveRoyalTitleInCurrentFaction>true</mustHaveRoyalTitleInCurrentFaction>
-          <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
-          <minTechLevel>Industrial</minTechLevel>
+          <faction>EtherCult</faction>
         </li>
 
         <!-- Get asker and assign some related text -->
