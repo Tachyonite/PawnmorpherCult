@@ -44,7 +44,7 @@
         <!-- make this a single, non morphed, pawn -->
         <li Class="PawnmorpherCult.Quests.GetConvertablePawn">
           <storeAs>convert</storeAs>
-          <mustBeColonist>true</mustBeColonist>
+          <mustBePrisoner>true</mustBePrisoner>
         </li>
 
         <li Class="QuestNode_GetMapOf">
