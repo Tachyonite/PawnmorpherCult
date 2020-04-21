@@ -945,6 +945,80 @@
             def of for frequently accessed building thingDefs 
             </summary>
         </member>
+        <member name="T:Pawnmorph.Buildings.MutaniteCentrifuge">
+            <summary>
+                building class for the mutanite centrifuge
+            </summary>
+            <seealso cref="T:Verse.Building" />
+        </member>
+        <member name="T:Pawnmorph.Buildings.MutaniteCentrifuge.RunningMode">
+            <summary>
+                the running mode of the centrifuge
+            </summary>
+        </member>
+        <member name="F:Pawnmorph.Buildings.MutaniteCentrifuge.RunningMode.Normal">
+            <summary>
+                normal production
+            </summary>
+        </member>
+        <member name="F:Pawnmorph.Buildings.MutaniteCentrifuge.RunningMode.HighYield">
+            <summary>
+                more efficient production at a cost of mutagenic buildup
+            </summary>
+        </member>
+        <member name="P:Pawnmorph.Buildings.MutaniteCentrifuge.CurrentMode">
+            <summary>
+                Gets or sets the current mode.
+            </summary>
+            <value>
+                The current mode.
+            </value>
+        </member>
+        <member name="P:Pawnmorph.Buildings.MutaniteCentrifuge.Enabled">
+            <summary>
+                Gets a value indicating whether this <see cref="T:Pawnmorph.Buildings.MutaniteCentrifuge" /> is enabled.
+            </summary>
+            <value>
+                <c>true</c> if enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Pawnmorph.Buildings.MutaniteCentrifuge.AdjCellsCardinalInBounds">
+            <summary>
+                Gets the adjacent cells cardinal in bounds.
+            </summary>
+            <value>
+                The adjacent cells cardinal in bounds.
+            </value>
+        </member>
+        <member name="M:Pawnmorph.Buildings.MutaniteCentrifuge.ExposeData">
+            <summary>
+                Exposes the data.
+            </summary>
+        </member>
+        <member name="M:Pawnmorph.Buildings.MutaniteCentrifuge.GetGizmos">
+            <summary>
+            Gets the gizmos.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pawnmorph.Buildings.MutaniteCentrifuge.SpawnSetup(Verse.Map,System.Boolean)">
+            <summary>
+            set up the object on spawn
+            </summary>
+            <param name="map">The map.</param>
+            <param name="respawningAfterLoad">if set to <c>true</c> [respawning after load].</param>
+        </member>
+        <member name="M:Pawnmorph.Buildings.MutaniteCentrifuge.Tick">
+            <summary>
+                called every tick
+            </summary>
+        </member>
+        <member name="M:Pawnmorph.Buildings.MutaniteCentrifuge.GetInspectString">
+            <summary>
+            Gets the inspect string.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Pawnmorph.Chambers.ChamberJobDefOf">
             <summary>
             def of for jobs related to mutagenic chambers 
@@ -1663,6 +1737,28 @@
             <returns>
             if the def can be used with the given pawn
             </returns>
+        </member>
+        <member name="T:Pawnmorph.DefExtensions.MutagenicBuildupSourceSettings">
+            <summary>
+            def extension for settings for mutagen buildup sources 
+            </summary>
+            <seealso cref="T:Verse.DefModExtension" />
+        </member>
+        <member name="F:Pawnmorph.DefExtensions.MutagenicBuildupSourceSettings.maxBuildup">
+            <summary>
+            the maximum severity this source should add 
+            </summary>
+        </member>
+        <member name="F:Pawnmorph.DefExtensions.MutagenicBuildupSourceSettings.mutagenicBuildupDef">
+            <summary>
+            The mutagenic buildup definition to use 
+            </summary>
+            if null a default will be used instead 
+        </member>
+        <member name="F:Pawnmorph.DefExtensions.MutagenicBuildupSourceSettings.mutagenDef">
+            <summary>
+            The mutagen definition
+            </summary>
         </member>
         <member name="T:Pawnmorph.DefExtensions.MutagenExtension">
             <summary>
@@ -3736,6 +3832,14 @@
             </summary>
             <param name="dinfo">The damage info.</param>
         </member>
+        <member name="P:Pawnmorph.Hediffs.RemoveFromPartComp.CompShouldRemove">
+            <summary>
+            Gets a value indicating whether the parent hediff should be removed.
+            </summary>
+            <value>
+              <c>true</c> if hediff should be removed; otherwise, <c>false</c>.
+            </value>
+        </member>
         <member name="T:Pawnmorph.Hediffs.RemoveFromPartCompProperties">
             <summary>
                 properties for the comp that removes other mutations when it's parent is added
@@ -4742,6 +4846,26 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Pawnmorph.MutagenicBuildupUtilities">
+            <summary>
+            static class for various mutagenic buildup related utilities 
+            </summary>
+        </member>
+        <member name="M:Pawnmorph.MutagenicBuildupUtilities.GetMutagenicBuildupMultiplier(Verse.Pawn,Pawnmorph.MutagenDef)">
+            <summary>
+            Gets the net mutagenic buildup multiplier for this pawn.
+            </summary>
+            <param name="pawn">The pawn.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Pawnmorph.MutagenicBuildupUtilities.AdjustMutagenicBuildup(Verse.Def,Verse.Pawn,System.Single)">
+            <summary>
+            Adjusts the mutagenic buildup for the given pawn using the given source 
+            </summary>
+            <param name="source">The source.</param>
+            <param name="pawn">The pawn.</param>
+            <param name="adjustValue">The adjust value.</param>
+        </member>
         <member name="T:Pawnmorph.MutationResult">
             <summary>
             struct that holds information about the result of a call to MutationUtility.AddMutation
@@ -5403,6 +5527,16 @@
             just set the passion level 
             </summary>
         </member>
+        <member name="F:Pawnmorph.PMDamageDefOf.MutagenCloud">
+            <summary>
+            The mutagen cloud (used with regular explosions like grenades) 
+            </summary>
+        </member>
+        <member name="F:Pawnmorph.PMDamageDefOf.MutagenCloud_Large">
+            <summary>
+            The mutagen cloud large (used with artillery) 
+            </summary>
+        </member>
         <member name="T:Pawnmorph.PMFoodUtilities">
             <summary>
                 static class for food related utilities
@@ -5592,6 +5726,11 @@
             </summary>
             note, the check is applied after the initial check on the food itself, so the actual chance a pawn will get sick from
             a specific, rotten food is this multiplied by the base chance to get sick from rotten food 
+        </member>
+        <member name="F:Pawnmorph.PMStatDefOf.MutaniteConcentration">
+            <summary>
+            the concentration of mutanite in a thing, this is used by refineries to determine how much of a thing is required to make mutanite 
+            </summary>
         </member>
         <member name="F:Pawnmorph.PMStatDefOf.TransformationSensitivity">
             <summary>
@@ -6300,7 +6439,7 @@
         </member>
         <member name="M:Pawnmorph.GraphicSys.MorphGraphicsUtils.GetHairColorOverrideSecond(Pawnmorph.MorphDef,Verse.Pawn)">
             <summary>
-            Gets the hair color override second.
+                Gets the hair color override second.
             </summary>
             <param name="def">The definition.</param>
             <param name="pawn">The pawn.</param>
@@ -6318,7 +6457,7 @@
         </member>
         <member name="M:Pawnmorph.GraphicSys.MorphGraphicsUtils.GetSkinColorSecondOverride(Pawnmorph.MorphDef,Verse.Pawn)">
             <summary>
-            Gets the skin color second override.
+                Gets the skin color second override.
             </summary>
             <param name="def">The definition.</param>
             <param name="pawn">The pawn.</param>
@@ -8951,6 +9090,9 @@
         <member name="M:Pawnmorph.MutagenicStone.TickRare">
             <summary>called every once and a while</summary>
         </member>
+        <member name="T:Pawnmorph.PatchHealthCardUtilityDrawHediffRow">
+            <summary> Draw an info icon for mutations with their descriptions in tooltip. </summary>
+        </member>
         <member name="T:Pawnmorph.PawnmorphGameComp">
             <summary>
             the world comp for this mod 
@@ -10221,13 +10363,6 @@
             <param name="hediff">The hediff.</param>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException">hediff</exception>
-        </member>
-        <member name="M:Pawnmorph.TransformerUtility.GetMutagenicBuildupMultiplier(Verse.Pawn)">
-            <summary>
-            Gets the net mutagenic buildup multiplier for this pawn.
-            </summary>
-            <param name="pawn">The pawn.</param>
-            <returns></returns>
         </member>
         <member name="F:Pawnmorph.TransformerUtility.MAX_APPAREL_PDIFF">
             <summary>
