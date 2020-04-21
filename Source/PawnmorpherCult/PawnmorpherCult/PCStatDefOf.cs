@@ -5,6 +5,7 @@ using RimWorld;
 
 namespace PawnmorpherCult
 {
+    [DefOf]
     public static class PCStatDefOf
     {
         /// <summary>
