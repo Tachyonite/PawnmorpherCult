@@ -6,7 +6,7 @@ using Pawnmorph;
 using UnityEngine;
 using Verse;
 
-namespace PawnmorpherCult.AbilitySys
+namespace PawnmorpherCult.Abilities
 {
     /// <summary>
     ///     comp for tracking the amount of 'mutagenic' entropy on a pawn

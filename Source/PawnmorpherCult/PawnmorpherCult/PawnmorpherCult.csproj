@@ -148,12 +148,14 @@
     <Compile Include="Abilities\AbilityCompBase.cs" />
     <Compile Include="Abilities\AddMutation.cs" />
     <Compile Include="Abilities\PolymorphDuration.cs" />
-    <Compile Include="AbilitySys\MutagenicEntropyGizmo.cs" />
-    <Compile Include="AbilitySys\MutagenicEntropyTracker.cs" />
+    <Compile Include="Abilities\MutagenicAbility.cs" />
+    <Compile Include="Abilities\MutagenicEntropyGizmo.cs" />
+    <Compile Include="Abilities\MutagenicEntropyTracker.cs" />
     <Compile Include="Hediffs\RemoveMutationDuration.cs" />
     <Compile Include="Hediffs\RemovePolymorphComp.cs" />
     <Compile Include="ModInit.cs" />
     <Compile Include="PCStatDefOf.cs" />
+    <Compile Include="PCAspectDefOf.cs" />
     <Compile Include="PMCult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quests\AddMutationsToPawn.cs" />
@@ -164,6 +166,7 @@
     <Compile Include="Quests\SignaledPart.cs" />
     <Compile Include="Quests\TransformPawn.cs" />
     <Compile Include="Traders\StockGenerator_BuyFormerHuman.cs" />
+    <Compile Include="Utilities\AbilityUtilities.cs" />
     <Compile Include="Utilities\QuestUtilities.cs" />
   </ItemGroup>
   <ItemGroup />

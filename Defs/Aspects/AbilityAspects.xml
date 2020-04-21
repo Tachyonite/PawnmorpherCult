@@ -1,0 +1,21 @@
+<Defs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Schemas/AspectDef.xsd">
+    <Pawnmorph.AspectDef>
+        <defName>EtherealAmplification</defName>
+        <label>TODO</label>
+        <description>TODO</description>
+        <removedByReverter>true</removedByReverter>
+        <transferToAnimal>true</transferToAnimal>
+        <stages>
+            <!-- each stage corresponds to a specific level -->
+            <li>
+                
+            </li>
+            <li>
+
+            </li>
+            <li>
+
+            </li>
+        </stages>
+    </Pawnmorph.AspectDef>
+</Defs>

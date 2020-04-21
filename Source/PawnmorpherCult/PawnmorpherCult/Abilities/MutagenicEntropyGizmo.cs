@@ -8,7 +8,7 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 
-namespace PawnmorpherCult.AbilitySys
+namespace PawnmorpherCult.Abilities
 {
     /// <summary>
     /// gui for the mutagenic entropy gizmo 
