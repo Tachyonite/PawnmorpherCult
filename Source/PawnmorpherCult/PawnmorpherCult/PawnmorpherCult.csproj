@@ -147,6 +147,7 @@
   <ItemGroup>
     <Compile Include="Abilities\AbilityCompBase.cs" />
     <Compile Include="Abilities\AddMutation.cs" />
+    <Compile Include="Abilities\MutagenicAbilityCommand.cs" />
     <Compile Include="Abilities\PolymorphDuration.cs" />
     <Compile Include="Abilities\MutagenicAbility.cs" />
     <Compile Include="Abilities\MutagenicEntropyGizmo.cs" />

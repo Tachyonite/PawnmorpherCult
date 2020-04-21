@@ -11,6 +11,17 @@ namespace PawnmorpherCult.Utilities
 {
     public static class AbilityUtilities
     {
+
+        /// <summary>
+        /// localization label for when a pawn can't cast an ability because they don't have a high enough 'mutagenic ability' level 
+        /// </summary>
+        public const string NOT_HIGH_ENOUGH_LEVEL_LABEL = "NoHighEnoughEvonicLevel";
+
+        /// <summary>
+        /// Localization Label for when an ability would produce too much mutagenic entropy for a given pawn 
+        /// </summary>
+        public const string TOO_MUCH_ENTROPY_LABEL = "TooMuchMutagenicEntropy"; 
+
         /// <summary>
         /// Gets the mutagenic entropy gain from this ability def.
         /// </summary>
