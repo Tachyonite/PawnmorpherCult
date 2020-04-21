@@ -1,0 +1,13 @@
+<Defs>
+    <StatDef>
+        <defName>Ability_MutagenicEntropyGain</defName>
+        <label>mutagenic entropy gain</label>
+        <category>Ability</category>
+        <description>How much mutagenic entropy will be added as a result of performing this ability.</description>
+        <defaultBaseValue>5</defaultBaseValue>
+        <minValue>0</minValue>
+        <showIfUndefined>false</showIfUndefined>
+        <displayPriorityInCategory>1002</displayPriorityInCategory>
+    </StatDef>
+
+</Defs>
